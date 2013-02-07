@@ -1,13 +1,7 @@
-//
-//  RemoteVc_iPhone.m
-//  JonesRemote
-//
-//  Created by Chris Jones on 07/31/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
-
 #import "RemoteVc_iPhone.h"
 #import "DvrVc_iPhone.h"
+#import "Theme.h"
+
 
 @implementation RemoteVc_iPhone {
     IRDevice _irDevice;
@@ -21,9 +15,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _selectorContainer.layer.shadowColor = [[UIColor blackColor] CGColor];
-    _selectorContainer.layer.shadowOffset = CGSizeMake(0, -3.0);
-    _selectorContainer.layer.shadowOpacity = 0.75;
+
+    _irDeviceLabel.font = [Theme fontForSize:22.0];
+
     [self bind];
 }
 
@@ -31,20 +25,11 @@
     [self setSelectorContainer:nil];
     [self setRemoteContainer:nil];
     [self setIrDeviceLabel:nil];
-    [super viewDidUnload];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    if (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown) {
-        return YES;
-    } else {
-        return NO;
-    }
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
@@ -65,7 +50,6 @@
 }
 
 - (void)bind {
-
     // Remove Previous Remote
     if (_remoteVc) {
         [_remoteVc.view removeFromSuperview];
@@ -73,11 +57,9 @@
     }
 
     // Set label text
-
     _irDeviceLabel.text = stringForIRDevice(_irDevice);
 
     // Set remote view
-
     switch (_irDevice) {
         case IRDeviceDVR:
         case IRDeviceCableA:
@@ -107,8 +89,6 @@
             break;
         }
         case IRDeviceCableB:
-            break;
-
         default:
             break;
     }
@@ -116,10 +96,6 @@
 
 - (IBAction)handleLeft:(id)sender {
     switch (_irDevice) {
-        case IRDeviceDVR: {
-            //[self bindIRDevice:IRDeviceWii];
-            break;
-        }
         case IRDeviceCableA: {
             [self bindIRDevice:IRDeviceDVR];
             break;
@@ -128,6 +104,7 @@
             [self bindIRDevice:IRDeviceCableA];
             break;
         }
+        case IRDeviceDVR:
         default:
             break;
     }

@@ -13,7 +13,7 @@ typedef enum {
     IRCommandRewind, IRCommandFastForward, IRCommandPlay, IRCommandPause, IRCommandStop, IRCommandRecord,
     IRCommandGuide, IRCommandRecordedShows, IRCommandPageUp, IRCommandPageDown, IRCommandUp, IRCommandDown, IRCommandLeft, IRCommandRight, IRCommandSelect, IRCommandExit,
     IRCommandA, IRCommandB, IRCommandC, IRCommandInfo,
-    IRCommandPowerOn, IRCommandPowerOff,
+    IRCommandPowerOn, IRCommandPowerOff, IRCommandVolUp, IRCommandVolDown, IRCommandMute,
     IRCommandStatus
 } IRCommand;
 
@@ -39,23 +39,23 @@ static inline NSString *stringForIRDevice(IRDevice irDevice) {
             break;
         }
         case IRDeviceCableA: {
-            string = @"Cable-A";
+            string = @"CABLE A";
             break;
         }
         case IRDeviceCableB: {
-            string = @"Cable-B";
+            string = @"CABLE B";
             break;
         }
         case IRDeviceBluRay: {
-            string = @"BluRay";
+            string = @"BLURAY";
             break;
         }
         case IRDeviceMac: {
-            string = @"Mac";
+            string = @"MAC";
             break;
         }
         case IRDeviceAppleTv: {
-            string = @"Apple TV";
+            string = @"APPLE TV";
             break;
         }
         case IRDeviceWii: {
@@ -63,15 +63,15 @@ static inline NSString *stringForIRDevice(IRDevice irDevice) {
             break;
         }
         case IRDeviceLeftTv: {
-            string = @"Left TV";
+            string = @"LEFT TV";
             break;
         }
         case IRDeviceCenterTv: {
-            string = @"Center TV";
+            string = @"CENTER TV";
             break;
         }
         case IRDeviceRightTv: {
-            string = @"Right TV";
+            string = @"RIGHT TV";
             break;
         }
         default:

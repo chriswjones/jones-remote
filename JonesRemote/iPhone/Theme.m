@@ -28,6 +28,18 @@
             nil];
     [[UINavigationBar appearance] setTitleTextAttributes:attrs];
 
+    // Bbi
+    UIImage *bbiImage = [[UIImage imageNamed:@"bbi"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 15, 0, 15)];
+    [[UIBarButtonItem appearance] setBackgroundImage:bbiImage
+                                            forState:UIControlStateNormal
+                                          barMetrics:UIBarMetricsDefault];
+
+    UIImage *bbiImageHighlighted = [[UIImage imageNamed:@"bbi_highlighted"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 15, 0, 15)];
+    [[UIBarButtonItem appearance] setBackgroundImage:bbiImageHighlighted
+                                            forState:UIControlStateHighlighted
+                                          barMetrics:UIBarMetricsDefault];
+
+
     // Back bbi
     UIImage *backImage = [[UIImage imageNamed:@"back_bbi"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 15, 0, 10)];
     [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backImage
@@ -64,7 +76,7 @@
 }
 
 + (UIColor *)faintGrayColor {
-    CGFloat rgb = (245.0/255.0);
+    CGFloat rgb = (245.0 / 255.0);
     return [UIColor colorWithRed:rgb green:rgb blue:rgb alpha:1.0];
 }
 

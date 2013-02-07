@@ -1,12 +1,3 @@
-//
-//  DvrVc_iPhone.m
-//  JonesRemote
-//
-//  Created by Chris Jones on 07/31/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
-
-#import <CoreGraphics/CoreGraphics.h>
 #import "DvrVc_iPhone.h"
 #import "CommandCenter.h"
 
@@ -14,36 +5,30 @@
     IRDevice _irDevice;
 }
 @synthesize scrollView;
-@synthesize part1;
-@synthesize part2;
-@synthesize part3;
+@synthesize favoritesView;
+@synthesize guideNavView;
+@synthesize showControlView;
+@synthesize numberPadView;
 
 #pragma mark - View Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.scrollView.contentSize = CGSizeMake(1440, 261);
-    [self.scrollView addSubview:self.part1];
+    CGFloat width = 568;
+    CGFloat height = 261;
 
-    self.part2.frame = CGRectMake(481, 0, self.part2.frame.size.width, self.part2.frame.size.height);
-    [self.scrollView addSubview:self.part2];
-    
-    self.part3.frame = CGRectMake(961, 0, self.part3.frame.size.width, self.part3.frame.size.height);
-    [self.scrollView addSubview:self.part3];
-}
+    self.scrollView.contentSize = CGSizeMake(width * 4, 261);
+    [self.scrollView addSubview:self.favoritesView];
 
+    self.guideNavView.frame = CGRectMake(width, 0, width, height);
+    [self.scrollView addSubview:self.guideNavView];
 
-- (void)viewDidUnload {
-    [self setPart1:nil];
-    [self setPart2:nil];
-    [self setScrollView:nil];
-    [self setPart3:nil];
-    [super viewDidUnload];
-}
+    self.showControlView.frame = CGRectMake(width * 2, 0, width, height);
+    [self.scrollView addSubview:self.showControlView];
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return YES;
+    self.numberPadView.frame = CGRectMake(width * 3, 0, width, height);
+    [self.scrollView addSubview:self.numberPadView];
 }
 
 #pragma mark - Bind
@@ -154,8 +139,31 @@
     [[CommandCenter singleton] sendIRCommand:IRCommandC toIRDevice:_irDevice];
 }
 
-#pragma mark - Helpers
+- (IBAction)handlePageUp:(id)sender {
+    [[CommandCenter singleton] sendIRCommand:IRCommandPageUp toIRDevice:_irDevice];
+}
 
-#pragma mark - Delegate Methods
+- (IBAction)handlePageDown:(id)sender {
+    [[CommandCenter singleton] sendIRCommand:IRCommandPageDown toIRDevice:_irDevice];
+}
+
+- (IBAction)handlePlusDay:(id)sender {
+    // todo
+}
+
+#pragma mark - Favorites
+
+- (IBAction)handleESPN:(id)sender {
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand7 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand2 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand9 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
+}
+
+- (IBAction)handlePac12:(id)sender {
+}
+
+- (IBAction)handleFoxSportsWest:(id)sender {
+}
 
 @end

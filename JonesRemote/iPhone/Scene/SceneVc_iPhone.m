@@ -125,8 +125,8 @@
     Command *cmd = [Command commandForDevice:kCenterTv command:kPowerOn queueable:YES];
     cmd.delegate = self;
     cmd.tag = kSportsBar;
-    [commandCenter sendCommand:cmd];*/
-
+    [commandCenter sendCommand:cmd];*/    
+    
     [[CommandCenter singleton] setMatrixInput:InputDeviceCableA toOutput:OutputDeviceLeftTv];
     [[CommandCenter singleton] setMatrixInput:InputDeviceDVR toOutput:OutputDeviceCenterTv];
     [[CommandCenter singleton] setMatrixInput:InputDeviceCableB toOutput:OutputDeviceRightTv];
@@ -136,7 +136,15 @@
     [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOn toIRDevice:IRDeviceRightTv];
 
     [[CommandCenter singleton] setMatrixInput:InputDeviceDVR toOutput:OutputDeviceAudioZone1];
+    
+    // ESPN
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand7 toIRDevice:IRDeviceDVR];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand2 toIRDevice:IRDeviceDVR];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand9 toIRDevice:IRDeviceDVR];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:IRDeviceDVR];
 
+    // todo ESPN2 and ESPNNEWS
+    
     // Cleanup
 
     [[CommandCenter singleton] setMatrixInput:InputDeviceNone toOutput:OutputDeviceAudioZone2];

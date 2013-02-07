@@ -1,4 +1,3 @@
-#import <CoreGraphics/CoreGraphics.h>
 #import "AssignmentVc_iPhone.h"
 #import "MatrixEnum.h"
 #import "IREnum.h"
@@ -6,6 +5,7 @@
 #import "AssignmentRowControl.h"
 #import "CommandCenter.h"
 #import "Theme.h"
+#import "TvVolumeVc_iPhone.h"
 
 
 #define kHeaderRowHeight 50.0
@@ -99,7 +99,7 @@
         [_scrollView addSubview:rowControl];
         [_rowControlsPage1 addObject:rowControl];
     }
-    
+
     // Page 2 Rows
     _rowControlsPage2 = [NSMutableArray array];
     for (NSNumber *input in _inputArray) {
@@ -112,9 +112,9 @@
         [_scrollView addSubview:rowControl];
         [_rowControlsPage2 addObject:rowControl];
     }
-    
+
     // Vertical Divider
-    _verticalDivider = [[UIView alloc]init];
+    _verticalDivider = [[UIView alloc] init];
     _verticalDivider.backgroundColor = [Theme grayColor];
     [_scrollView addSubview:_verticalDivider];
 }
@@ -153,7 +153,7 @@
         rowControl.frame = CGRectMake(320, yCoordinate, 320, rowHeight);
         yCoordinate += rowControl.bounds.size.height;
     }
-    
+
     // Vertical Divider
     _verticalDivider.frame = CGRectMake(319.0, 0, 1.0, _scrollView.bounds.size.height);
 }
@@ -201,7 +201,7 @@
             default:
                 break;
         }
-    }else {
+    } else {
         // TV on/off or volume
         IRDevice device = IRDeviceNone;
         switch (index) {
@@ -217,15 +217,14 @@
                 device = IRDeviceRightTv;
                 break;
             }
-            default:                
+            default:
                 break;
         }
 
         UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:stringForIRDevice(device)
                                                                  delegate:self
                                                         cancelButtonTitle:@"Cancel"
-                                                   destructiveButtonTitle:nil
-                                                        otherButtonTitles:@"On", @"Off", @"Volume", nil];
+                                                   destructiveButtonTitle:nil otherButtonTitles:@"On", @"Off", @"Volume", nil];
         actionSheet.tag = device;
         [actionSheet showInView:self.view];
     }
@@ -240,21 +239,23 @@
         return;
     }
 
-    IRDevice device = (IRDevice)actionSheet.tag;
+    IRDevice device = (IRDevice) actionSheet.tag;
     switch (buttonIndex) {
-        case 0:{
+        case 0: {
             // On
-            [[CommandCenter singleton] sendIRCommand:IRCommandPowerOn toIRDevice:device];
+            [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOn toIRDevice:device];
             break;
         }
-        case 1:{
+        case 1: {
             // Off
-            [[CommandCenter singleton] sendIRCommand:IRCommandPowerOff toIRDevice:device];
+            [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOff toIRDevice:device];
             break;
         }
-        case 2:{
+        case 2: {
             // Volume
-            // todo launch modal vc
+            [self presentViewController:[[UINavigationController alloc] initWithRootViewController:[[TvVolumeVc_iPhone alloc] initWithIrDevice:device]]
+                               animated:YES
+                             completion:nil];
             break;
         }
         default:
