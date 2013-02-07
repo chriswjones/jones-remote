@@ -287,7 +287,7 @@
 
     [UIView animateWithDuration:0.5
                           delay:0
-                        options:UIViewAnimationCurveEaseIn
+                        options:UIViewAnimationOptionCurveEaseIn
                      animations:^{
                          _loadingView.alpha = 0.85;
                          _activityView.alpha = 1.0;
@@ -298,7 +298,7 @@
 
 - (void)hideLoadingView:(BOOL)animated {
     if (animated) {
-        [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationCurveEaseIn animations:^{
+        [UIView animateWithDuration:0.5 delay:0 options:UIViewAnimationOptionCurveEaseIn animations:^{
             _loadingView.alpha = 0.0;
             _activityView.alpha = 0.0;
         }                completion:^(BOOL completed) {
