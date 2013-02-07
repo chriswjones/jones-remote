@@ -9,6 +9,7 @@
 #import "SceneVc_iPhone.h"
 #import "CommandCenter.h"
 #import "AssignmentVc_iPhone.h"
+#import "RemoteVc_iPhone.h"
 
 
 @implementation SceneVc_iPhone {
@@ -21,6 +22,10 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
+    self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@" BACK"
+                                                                             style:UIBarButtonItemStyleBordered
+                                                                            target:nil
+                                                                            action:nil];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -28,8 +33,14 @@
     [self hideLoadingView:NO];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
+    [super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
+
+    if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight) {
+        RemoteVc_iPhone *remoteVc = [[RemoteVc_iPhone alloc] init];
+        [remoteVc bindIRDevice:IRDeviceDVR];
+        [self.navigationController pushViewController:remoteVc animated:NO];
+    }
 }
 
 #pragma mark - Bind

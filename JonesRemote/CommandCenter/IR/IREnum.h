@@ -27,7 +27,8 @@ typedef enum {
     IRDeviceWii,
     IRDeviceLeftTv,
     IRDeviceCenterTv,
-    IRDeviceRightTv
+    IRDeviceRightTv,
+    IRDeviceNone
 } IRDevice;
 
 static inline NSString *stringForIRDevice(IRDevice irDevice) {

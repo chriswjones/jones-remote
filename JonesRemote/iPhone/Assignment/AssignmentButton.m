@@ -1,18 +1,23 @@
-//
-// Created by chris on 10/6/12.
-//
-// To change the template use AppCode | Preferences | File Templates.
-//
 
 
 #import "AssignmentButton.h"
 
 
-@implementation AssignmentButton {
+@implementation AssignmentButton
 
+- (id)initWithInputDevice:(InputDevice)inputDevice outputDevice:(OutputDevice)outputDevice {
+    self = [super init];
+    if (self) {
+        self.inputDevice = inputDevice;
+        self.outputDevice = outputDevice;
+
+        [self setBackgroundImage:[UIImage imageNamed:@"AssignmentButtonBg@2x.png"]
+                        forState:UIControlStateNormal];
+        [self setBackgroundImage:[UIImage imageNamed:@"AssignmentButtonBg_highlighted@2x.png"]
+                        forState:UIControlStateHighlighted];
+    }
+
+    return self;
 }
-@synthesize inputSource = _inputSource;
-@synthesize outputDevice = _outputDevice;
-
 
 @end

@@ -1,24 +1,27 @@
-//
-//  AssignmentVc_iPhone.m
-//  JonesRemote
-//
-//  Created by Chris Jones on 10/06/12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
-//
-
+#import <CoreGraphics/CoreGraphics.h>
 #import "AssignmentVc_iPhone.h"
 #import "MatrixEnum.h"
-#import "AssignmentButton.h"
 #import "IREnum.h"
 #import "RemoteVc_iPhone.h"
+#import "AssignmentRowControl.h"
 #import "CommandCenter.h"
+#import "Theme.h"
 
-#define inputWidth 100
-#define headerRowHeight 30
-#define scrollViewWidth 600
+
+#define kHeaderRowHeight 50.0
+
 
 @implementation AssignmentVc_iPhone {
     NSArray *_inputArray;
+    UIScrollView *_scrollView;
+    NSMutableArray *_rowControlsPage1;
+    UIView *_headerView;
+    UIView *_headerDivider;
+    NSArray *_imageArray;
+    NSMutableArray *_headerImageViews;
+    NSMutableArray *_headerButtons;
+    NSMutableArray *_rowControlsPage2;
+    UIView *_verticalDivider;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -32,217 +35,132 @@
                                                 [NSNumber numberWithInt:InputDeviceMac],
                                                 [NSNumber numberWithInt:InputDeviceAppleTv],
                                                 [NSNumber numberWithInt:InputDeviceWii],
-                                                [NSNumber numberWithInt:InputDeviceNone],
+                                                nil];
+
+        _imageArray = [NSArray arrayWithObjects:[UIImage imageNamed:@"tv_left"],
+                                                [UIImage imageNamed:@"tv_center"],
+                                                [UIImage imageNamed:@"tv_right"],
+                                                [UIImage imageNamed:@"audio_1"],
+                                                [UIImage imageNamed:@"audio_2"],
+                                                [UIImage imageNamed:@"audio_3"],
                                                 nil];
     }
 
     return self;
 }
 
-
 #pragma mark - View Lifecycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    CGFloat yCoordinate = 0;
-    CGFloat imageWidth = (scrollViewWidth - inputWidth) / 2;
-    CGFloat headerInputWidth = imageWidth / 3;
-    CGFloat rowHeight = headerInputWidth;
-    CGFloat totalHeight = ([_inputArray count] * rowHeight) + (headerRowHeight * 2);
+    // ScrollView
+    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+    _scrollView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
+    _scrollView.pagingEnabled = YES;
+    _scrollView.bounces = NO;
+    _scrollView.showsHorizontalScrollIndicator = NO;
+    [self.view addSubview:_scrollView];
 
-    UIScrollView *scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
-    scrollView.contentSize = CGSizeMake(scrollViewWidth + 20, totalHeight + (headerRowHeight * 2));
-    scrollView.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
-    [self.view addSubview:scrollView];
+    // Header
+    _headerView = [[UIView alloc] init];
+    //_headerView.backgroundColor = [UIColor lightGrayColor];
 
+    _headerImageViews = [NSMutableArray array];
+    _headerButtons = [NSMutableArray array];
+    for (UIImage *image in _imageArray) {
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
+        imageView.contentMode = UIViewContentModeCenter;
+        [_headerView addSubview:imageView];
+        [_headerImageViews addObject:imageView];
 
-    // Vertical Dividers
-
-    UIView *v1 = [[UIView alloc] initWithFrame:CGRectMake(inputWidth, headerRowHeight, 1.0, totalHeight - headerRowHeight)];
-    v1.backgroundColor = [UIColor blackColor];
-    [scrollView addSubview:v1];
-
-    UIView *v2 = [[UIView alloc] initWithFrame:CGRectMake(inputWidth + imageWidth, headerRowHeight, 1.0, totalHeight - headerRowHeight)];
-    v2.backgroundColor = [UIColor blackColor];
-    [scrollView addSubview:v2];
-
-    UIView *vLast = [[UIView alloc] initWithFrame:CGRectMake(inputWidth + (imageWidth * 2), headerRowHeight, 1.0, totalHeight - headerRowHeight)];
-    vLast.backgroundColor = [UIColor blackColor];
-    [scrollView addSubview:vLast];
-
-    UIView *v3 = [[UIView alloc] initWithFrame:CGRectMake(inputWidth + headerInputWidth, headerRowHeight, 1.0, totalHeight - headerRowHeight)];
-    v3.backgroundColor = [UIColor lightGrayColor];
-    [scrollView addSubview:v3];
-
-    UIView *v4 = [[UIView alloc] initWithFrame:CGRectMake(inputWidth + (headerInputWidth * 2), headerRowHeight, 1.0, totalHeight - headerRowHeight)];
-    v4.backgroundColor = [UIColor lightGrayColor];
-    [scrollView addSubview:v4];
-
-    UIView *v5 = [[UIView alloc] initWithFrame:CGRectMake(inputWidth + imageWidth + headerInputWidth, headerRowHeight, 1.0, totalHeight - headerRowHeight)];
-    v5.backgroundColor = [UIColor lightGrayColor];
-    [scrollView addSubview:v5];
-
-    UIView *v6 = [[UIView alloc] initWithFrame:CGRectMake(inputWidth + imageWidth + (headerInputWidth * 2), headerRowHeight, 1.0, totalHeight - headerRowHeight)];
-    v6.backgroundColor = [UIColor lightGrayColor];
-    [scrollView addSubview:v6];
-
-
-    // TV an Audio Images
-
-    UILabel *tvLabel = [[UILabel alloc] initWithFrame:CGRectMake(inputWidth, yCoordinate, imageWidth, headerRowHeight)];
-    tvLabel.textAlignment = UITextAlignmentCenter;
-    tvLabel.text = @"TV";
-    [scrollView addSubview:tvLabel];
-
-    UILabel *audioLabel = [[UILabel alloc] initWithFrame:CGRectMake(inputWidth + imageWidth, yCoordinate, imageWidth, headerRowHeight)];
-    audioLabel.textAlignment = UITextAlignmentCenter;
-    audioLabel.text = @"AUDIO";
-    [scrollView addSubview:audioLabel];
-
-
-    // H Border 1
-    yCoordinate += headerRowHeight;
-    UIView *hBorder1 = [[UIView alloc] initWithFrame:CGRectMake(inputWidth, yCoordinate, imageWidth * 2, 1.0)];
-    hBorder1.backgroundColor = [UIColor blackColor];
-    [scrollView addSubview:hBorder1];
-    yCoordinate += hBorder1.bounds.size.height;
-
-    // TV Inputs
-
-    UIView *tvInputs = [[UIView alloc] initWithFrame:CGRectMake(inputWidth, yCoordinate, imageWidth, headerRowHeight)];
-    tvInputs.backgroundColor = [UIColor clearColor];
-    [scrollView addSubview:tvInputs];
-
-    UILabel *leftTv = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, headerInputWidth, tvInputs.bounds.size.height)];
-    leftTv.textAlignment = UITextAlignmentCenter;
-    leftTv.backgroundColor = [UIColor clearColor];
-    leftTv.text = @"L";
-    [tvInputs addSubview:leftTv];
-
-    UILabel *centerTv = [[UILabel alloc] initWithFrame:CGRectMake(headerInputWidth, 0, headerInputWidth, tvInputs.bounds.size.height)];
-    centerTv.backgroundColor = [UIColor clearColor];
-    centerTv.textAlignment = UITextAlignmentCenter;
-    centerTv.text = @"C";
-    [tvInputs addSubview:centerTv];
-
-    UILabel *rightTv = [[UILabel alloc] initWithFrame:CGRectMake(headerInputWidth * 2, 0, headerInputWidth, tvInputs.bounds.size.height)];
-    rightTv.backgroundColor = [UIColor clearColor];
-    rightTv.textAlignment = UITextAlignmentCenter;
-    rightTv.text = @"R";
-    [tvInputs addSubview:rightTv];
-
-    // Audio Inputs
-    UIView *audioInputs = [[UIView alloc] initWithFrame:CGRectMake(inputWidth + imageWidth, yCoordinate, imageWidth, headerRowHeight)];
-    audioInputs.backgroundColor = [UIColor clearColor];
-    [scrollView addSubview:audioInputs];
-
-    UILabel *zoneOne = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, headerInputWidth, audioInputs.bounds.size.height)];
-    zoneOne.backgroundColor = [UIColor clearColor];
-    zoneOne.textAlignment = UITextAlignmentCenter;
-    zoneOne.text = @"1";
-    [audioInputs addSubview:zoneOne];
-
-    UILabel *zoneTwo = [[UILabel alloc] initWithFrame:CGRectMake(headerInputWidth, 0, headerInputWidth, audioInputs.bounds.size.height)];
-    zoneTwo.backgroundColor = [UIColor clearColor];
-    zoneTwo.textAlignment = UITextAlignmentCenter;
-    zoneTwo.text = @"2";
-    [audioInputs addSubview:zoneTwo];
-
-    UILabel *zoneThree = [[UILabel alloc] initWithFrame:CGRectMake(headerInputWidth * 2, 0, headerInputWidth, audioInputs.bounds.size.height)];
-    zoneThree.backgroundColor = [UIColor clearColor];
-    zoneThree.textAlignment = UITextAlignmentCenter;
-    zoneThree.text = @"3";
-    [audioInputs addSubview:zoneThree];
-
-    // H Border 2
-    yCoordinate += headerRowHeight;
-    UIView *hBorder2 = [[UIView alloc] initWithFrame:CGRectMake(inputWidth, yCoordinate, imageWidth * 2, 1.0)];
-    hBorder2.backgroundColor = [UIColor blackColor];
-    [scrollView addSubview:hBorder2];
-    yCoordinate += hBorder2.bounds.size.height;
-
-
-    // Inputs
-
-    yCoordinate = headerRowHeight * 2;
-
-    for (NSNumber *input in _inputArray) {
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, yCoordinate, inputWidth - 20, rowHeight)];
-        label.textAlignment = UITextAlignmentRight;
-        label.text = stringForInputDevice((InputDevice) [input integerValue]);
-        [scrollView addSubview:label];
-
-        AssignmentButton *leftTvButton = [[AssignmentButton alloc] init];
-        leftTvButton.frame = CGRectMake(inputWidth + 1, yCoordinate, headerInputWidth - 1, rowHeight - 1);
-        leftTvButton.inputSource = input;
-        leftTvButton.outputDevice = [NSNumber numberWithInt:OutputDeviceLeftTv];
-        [scrollView addSubview:leftTvButton];
-        [leftTvButton addTarget:self action:@selector(handleTouchUp:) forControlEvents:UIControlEventTouchUpInside];
-        [leftTvButton setImage:[UIImage imageNamed:@"AssignmentButtonBg@2x"] forState:UIControlStateNormal];
-        [leftTvButton setImage:[UIImage imageNamed:@"AssignmentButtonBg_highlighted@2x"] forState:UIControlStateHighlighted];
-
-        AssignmentButton *centerTvButton = [[AssignmentButton alloc] init];
-        centerTvButton.frame = CGRectMake(inputWidth + headerInputWidth + 1, yCoordinate, headerInputWidth - 1, rowHeight - 1);
-        centerTvButton.inputSource = input;
-        centerTvButton.outputDevice = [NSNumber numberWithInt:OutputDeviceCenterTv];
-        [scrollView addSubview:centerTvButton];
-        [centerTvButton addTarget:self action:@selector(handleTouchUp:) forControlEvents:UIControlEventTouchUpInside];
-        [centerTvButton setImage:[UIImage imageNamed:@"AssignmentButtonBg@2x"] forState:UIControlStateNormal];
-        [centerTvButton setImage:[UIImage imageNamed:@"AssignmentButtonBg_highlighted@2x"] forState:UIControlStateHighlighted];
-
-        AssignmentButton *rightTvButton = [[AssignmentButton alloc] init];
-        rightTvButton.frame = CGRectMake(inputWidth + (headerInputWidth * 2) + 1, yCoordinate, headerInputWidth - 1, rowHeight - 1);
-        rightTvButton.inputSource = input;
-        rightTvButton.outputDevice = [NSNumber numberWithInt:OutputDeviceRightTv];
-        [scrollView addSubview:rightTvButton];
-        [rightTvButton addTarget:self action:@selector(handleTouchUp:) forControlEvents:UIControlEventTouchUpInside];
-        [rightTvButton setImage:[UIImage imageNamed:@"AssignmentButtonBg@2x"] forState:UIControlStateNormal];
-        [rightTvButton setImage:[UIImage imageNamed:@"AssignmentButtonBg_highlighted@2x"] forState:UIControlStateHighlighted];
-
-        AssignmentButton *audioOneButton = [[AssignmentButton alloc] init];
-        audioOneButton.frame = CGRectMake(inputWidth + imageWidth + 1, yCoordinate, headerInputWidth - 1, rowHeight - 1);
-        audioOneButton.inputSource = input;
-        audioOneButton.outputDevice = [NSNumber numberWithInt:OutputDeviceAudioZone1];
-        [scrollView addSubview:audioOneButton];
-        [audioOneButton addTarget:self action:@selector(handleTouchUp:) forControlEvents:UIControlEventTouchUpInside];
-        [audioOneButton setImage:[UIImage imageNamed:@"AssignmentButtonBg@2x"] forState:UIControlStateNormal];
-        [audioOneButton setImage:[UIImage imageNamed:@"AssignmentButtonBg_highlighted@2x"] forState:UIControlStateHighlighted];
-
-        AssignmentButton *audioTwoButton = [[AssignmentButton alloc] init];
-        audioTwoButton.frame = CGRectMake(inputWidth + imageWidth + (headerInputWidth * 1) + 1, yCoordinate, headerInputWidth - 1, rowHeight - 1);
-        audioTwoButton.inputSource = input;
-        audioTwoButton.outputDevice = [NSNumber numberWithInt:OutputDeviceAudioZone2];
-        [scrollView addSubview:audioTwoButton];
-        [audioTwoButton addTarget:self action:@selector(handleTouchUp:) forControlEvents:UIControlEventTouchUpInside];
-        [audioTwoButton setImage:[UIImage imageNamed:@"AssignmentButtonBg@2x"] forState:UIControlStateNormal];
-        [audioTwoButton setImage:[UIImage imageNamed:@"AssignmentButtonBg_highlighted@2x"] forState:UIControlStateHighlighted];
-
-        AssignmentButton *audioThreeButton = [[AssignmentButton alloc] init];
-        audioThreeButton.frame = CGRectMake(inputWidth + imageWidth + (headerInputWidth * 2) + 1, yCoordinate, headerInputWidth - 1, rowHeight - 1);
-        audioThreeButton.inputSource = input;
-        audioThreeButton.outputDevice = [NSNumber numberWithInt:OutputDeviceAudioZone3];
-        [scrollView addSubview:audioThreeButton];
-        [audioThreeButton addTarget:self action:@selector(handleTouchUp:) forControlEvents:UIControlEventTouchUpInside];
-        [audioThreeButton setImage:[UIImage imageNamed:@"AssignmentButtonBg@2x"] forState:UIControlStateNormal];
-        [audioThreeButton setImage:[UIImage imageNamed:@"AssignmentButtonBg_highlighted@2x"] forState:UIControlStateHighlighted];
-
-        yCoordinate += rowHeight;
-
-        UIView *border = [[UIView alloc] initWithFrame:CGRectMake(inputWidth, yCoordinate - 1, imageWidth * 2, 1.0)];
-        border.backgroundColor = [UIColor darkGrayColor];
-        [scrollView addSubview:border];
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button addTarget:self action:@selector(handleTouchUp:) forControlEvents:UIControlEventTouchUpInside];
+        [_headerView addSubview:button];
+        [_headerButtons addObject:button];
     }
 
+    [_scrollView addSubview:_headerView];
+
+    // Divider
+    _headerDivider = [[UIView alloc] init];
+    _headerDivider.backgroundColor = [UIColor darkGrayColor];
+    [_scrollView addSubview:_headerDivider];
+
+    // Page 1 Rows
+    _rowControlsPage1 = [NSMutableArray array];
+    for (NSNumber *input in _inputArray) {
+        InputDevice inputDevice = (InputDevice) [input integerValue];
+        NSArray *outputArray = [NSArray arrayWithObjects:[NSNumber numberWithInt:OutputDeviceLeftTv],
+                                                         [NSNumber numberWithInt:OutputDeviceCenterTv],
+                                                         [NSNumber numberWithInt:OutputDeviceRightTv],
+                                                         nil];
+        AssignmentRowControl *rowControl = [[AssignmentRowControl alloc] initWithInputDevice:inputDevice outputArray:outputArray];
+        [_scrollView addSubview:rowControl];
+        [_rowControlsPage1 addObject:rowControl];
+    }
+    
+    // Page 2 Rows
+    _rowControlsPage2 = [NSMutableArray array];
+    for (NSNumber *input in _inputArray) {
+        InputDevice inputDevice = (InputDevice) [input integerValue];
+        NSArray *outputArray = [NSArray arrayWithObjects:[NSNumber numberWithInt:OutputDeviceAudioZone1],
+                                                         [NSNumber numberWithInt:OutputDeviceAudioZone2],
+                                                         [NSNumber numberWithInt:OutputDeviceAudioZone3],
+                                                         nil];
+        AssignmentRowControl *rowControl = [[AssignmentRowControl alloc] initWithInputDevice:inputDevice outputArray:outputArray];
+        [_scrollView addSubview:rowControl];
+        [_rowControlsPage2 addObject:rowControl];
+    }
+    
+    // Vertical Divider
+    _verticalDivider = [[UIView alloc]init];
+    _verticalDivider.backgroundColor = [Theme grayColor];
+    [_scrollView addSubview:_verticalDivider];
+}
+
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+
+    // Scroll view content size
+    _scrollView.contentSize = CGSizeMake(640, _scrollView.bounds.size.height);
+
+    // Header
+    _headerView.frame = CGRectMake(0, 0, 640, kHeaderRowHeight);
+    CGFloat rowWidth = 640.0 / [_headerImageViews count];
+    for (int i = 0; i < [_headerImageViews count]; i++) {
+        UIImageView *imageView = [_headerImageViews objectAtIndex:i];
+        imageView.frame = CGRectMake(i * rowWidth, 0, rowWidth, kHeaderRowHeight);
+
+        UIButton *button = [_headerButtons objectAtIndex:i];
+        button.frame = CGRectMake(i * rowWidth, 0, rowWidth, kHeaderRowHeight);
+    }
+
+    // Divider
+    _headerDivider.frame = CGRectMake(0, kHeaderRowHeight, 640, 1.0);
+
+    // Page 1 Rows
+    CGFloat rowHeight = (_scrollView.bounds.size.height - 1.0 - kHeaderRowHeight) / [_rowControlsPage1 count];
+    CGFloat yCoordinate = kHeaderRowHeight + 1.0;
+    for (AssignmentRowControl *rowControl in _rowControlsPage1) {
+        rowControl.frame = CGRectMake(0, yCoordinate, 320, rowHeight);
+        yCoordinate += rowControl.bounds.size.height;
+    }
+
+    // Page 2 Rows
+    yCoordinate = kHeaderRowHeight + 1.0;
+    for (AssignmentRowControl *rowControl in _rowControlsPage2) {
+        rowControl.frame = CGRectMake(320, yCoordinate, 320, rowHeight);
+        yCoordinate += rowControl.bounds.size.height;
+    }
+    
+    // Vertical Divider
+    _verticalDivider.frame = CGRectMake(319.0, 0, 1.0, _scrollView.bounds.size.height);
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:animated];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return interfaceOrientation == UIInterfaceOrientationPortrait;
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
@@ -259,12 +177,89 @@
 
 #pragma mark - Actions
 
-- (void)handleTouchUp:(AssignmentButton *)button {
-    [[CommandCenter singleton] setMatrixInput:(InputDevice) [button.inputSource integerValue] toOutput:(OutputDevice) [button.outputDevice integerValue]];
+- (void)handleTouchUp:(UIButton *)sender {
+    int index = [_headerButtons indexOfObject:sender];
+
+    if (index >= 3) {
+        // Audio Zone Off
+        switch (index) {
+            case 3: {
+                [[CommandCenter singleton] setMatrixInput:InputDeviceNone
+                                                 toOutput:OutputDeviceAudioZone1];
+                break;
+            }
+            case 4: {
+                [[CommandCenter singleton] setMatrixInput:InputDeviceNone
+                                                 toOutput:OutputDeviceAudioZone2];
+                break;
+            }
+            case 5: {
+                [[CommandCenter singleton] setMatrixInput:InputDeviceNone
+                                                 toOutput:OutputDeviceAudioZone3];
+                break;
+            }
+            default:
+                break;
+        }
+    }else {
+        // TV on/off or volume
+        IRDevice device = IRDeviceNone;
+        switch (index) {
+            case 0: {
+                device = IRDeviceLeftTv;
+                break;
+            }
+            case 1: {
+                device = IRDeviceCenterTv;
+                break;
+            }
+            case 2: {
+                device = IRDeviceRightTv;
+                break;
+            }
+            default:                
+                break;
+        }
+
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:stringForIRDevice(device)
+                                                                 delegate:self
+                                                        cancelButtonTitle:@"Cancel"
+                                                   destructiveButtonTitle:nil
+                                                        otherButtonTitles:@"On", @"Off", @"Volume", nil];
+        actionSheet.tag = device;
+        [actionSheet showInView:self.view];
+    }
 }
 
 #pragma mark - Helpers
 
 #pragma mark - Delegate Methods
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == actionSheet.cancelButtonIndex) {
+        return;
+    }
+
+    IRDevice device = (IRDevice)actionSheet.tag;
+    switch (buttonIndex) {
+        case 0:{
+            // On
+            [[CommandCenter singleton] sendIRCommand:IRCommandPowerOn toIRDevice:device];
+            break;
+        }
+        case 1:{
+            // Off
+            [[CommandCenter singleton] sendIRCommand:IRCommandPowerOff toIRDevice:device];
+            break;
+        }
+        case 2:{
+            // Volume
+            // todo launch modal vc
+            break;
+        }
+        default:
+            break;
+    }
+}
 
 @end

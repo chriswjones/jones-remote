@@ -169,23 +169,23 @@ static inline NSString *stringForInputDevice(InputDevice inputDevice) {
             break;
         }
         case InputDeviceCableA: {
-            string = @"Cable-A";
+            string = @"CABLE A";
             break;
         }
         case InputDeviceCableB: {
-            string = @"Cable-B";
+            string = @"CABLE B";
             break;
         }
         case InputDeviceBluRay: {
-            string = @"BluRay";
+            string = @"BLURAY";
             break;
         }
         case InputDeviceMac: {
-            string = @"Mac";
+            string = @"MAC";
             break;
         }
         case InputDeviceAppleTv: {
-            string = @"Apple TV";
+            string = @"APPLE TV";
             break;
         }
         case InputDeviceWii: {

@@ -9,13 +9,10 @@
 #import "AppDelegate.h"
 #import "SceneVc_iPhone.h"
 #import "CommandCenter.h"
+#import "Theme.h"
 
-@implementation AppDelegate {
-
-}
-
+@implementation AppDelegate
 @synthesize window = _window;
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -24,7 +21,8 @@
     [CommandCenter singleton];
 
     // Load UI
-    [[UINavigationBar appearance] setTintColor:[UIColor darkGrayColor]];
+    //[[UINavigationBar appearance] setTintColor:[UIColor darkGrayColor]];
+    [Theme setupNavBarAppearance];
     SceneVc_iPhone *vc = [[SceneVc_iPhone alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = nav;
