@@ -27,7 +27,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.navigationItem.title = @"Input Assignment";
+        self.navigationItem.title = @"INPUT ASSIGNMENT";
         _inputArray = [NSArray arrayWithObjects:[NSNumber numberWithInt:InputDeviceDVR],
                                                 [NSNumber numberWithInt:InputDeviceCableA],
                                                 [NSNumber numberWithInt:InputDeviceCableB],

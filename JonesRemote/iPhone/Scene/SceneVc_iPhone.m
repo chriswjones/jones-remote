@@ -210,6 +210,9 @@
     [[CommandCenter singleton] setMatrixInput:InputDeviceNone toOutput:OutputDeviceAudioZone3];
     [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOff toIRDevice:IRDeviceLeftTv];
     [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOff toIRDevice:IRDeviceRightTv];
+
+    // todo wait then launch remote
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"remote://"]];
 }
 
 - (IBAction)handleWii:(id)sender {

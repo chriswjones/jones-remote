@@ -12,7 +12,7 @@
     if (self) {
         _irDevice = irDevice;
         self.navigationItem.title = stringForIRDevice(_irDevice);
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done"
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"DONE"
                                                                                   style:UIBarButtonItemStyleBordered
                                                                                  target:self
                                                                                  action:@selector(handleDone:)];
