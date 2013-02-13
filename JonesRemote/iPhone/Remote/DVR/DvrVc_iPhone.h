@@ -1,11 +1,16 @@
+
 #import "IREnum.h"
 
 @interface DvrVc_iPhone : UIViewController
 
 @property(strong, nonatomic) IBOutlet UIScrollView *scrollView;
+
 @property(strong, nonatomic) IBOutlet UIView *favoritesView;
+
 @property(strong, nonatomic) IBOutlet UIView *guideNavView;
+
 @property(strong, nonatomic) IBOutlet UIView *showControlView;
+
 @property(strong, nonatomic) IBOutlet UIView *numberPadView;
 
 - (IBAction)handlePlay:(id)sender;
@@ -64,13 +69,79 @@
 
 - (IBAction)handlePlusDay:(id)sender;
 
+- (IBAction)handleMinusDay:(id)sender;
+
+- (IBAction)handleLive:(id)sender;
+
+- (IBAction)handleChannelDown:(id)sender;
+
+- (IBAction)handleChannelUp:(id)sender;
+
 // Favorites
 
 - (IBAction)handleESPN:(id)sender;
 
+- (IBAction)handleNFL:(id)sender;
+
 - (IBAction)handlePac12:(id)sender;
 
-- (IBAction)handleFoxSportsWest:(id)sender;
+- (IBAction)handleHboOD:(id)sender;
+
+- (IBAction)handleHBO:(id)sender;
+
+- (IBAction)handleCNN:(id)sender;
+
+- (IBAction)handlePBS:(id)sender;
+
+- (IBAction)handleFox:(id)sender;
+
+- (IBAction)handleESPN2:(id)sender;
+
+- (IBAction)handleRedZone:(id)sender;
+
+- (IBAction)handleNbcSports:(id)sender;
+
+- (IBAction)handleFoxBiz:(id)sender;
+
+- (IBAction)handleCinemax:(id)sender;
+
+- (IBAction)handleHLN:(id)sender;
+
+- (IBAction)handleFX:(id)sender;
+
+- (IBAction)handleNbc:(id)sender;
+
+- (IBAction)handleESPNews:(id)sender;
+
+- (IBAction)handleGolf:(id)sender;
+
+- (IBAction)handleCbsSports:(id)sender;
+
+- (IBAction)handleMSNBC:(id)sender;
+
+- (IBAction)handleShowtime:(id)sender;
+
+- (IBAction)handleBBC:(id)sender;
+
+- (IBAction)handleTBS:(id)sender;
+
+- (IBAction)handleCBS:(id)sender;
+
+- (IBAction)handleEspnU:(id)sender;
+
+- (IBAction)handleTennis:(id)sender;
+
+- (IBAction)handleFoxSports:(id)sender;
+
+- (IBAction)handleFCS:(id)sender;
+
+- (IBAction)handleMoviesOD:(id)sender;
+
+- (IBAction)handleWeather:(id)sender;
+
+- (IBAction)handleTNT:(id)sender;
+
+- (IBAction)handleABC:(id)sender;
 
 // Bind
 

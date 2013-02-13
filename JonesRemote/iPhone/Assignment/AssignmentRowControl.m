@@ -36,15 +36,6 @@
         _hDivider.backgroundColor = [Theme grayColor];
         [self addSubview:_hDivider];
 
-        // Label
-        _deviceLabel = [[UILabel alloc] init];
-        _deviceLabel.font = [Theme fontForSize:60];
-        _deviceLabel.adjustsFontSizeToFitWidth = YES;
-        _deviceLabel.textColor = [Theme lightGrayColor];
-        _deviceLabel.backgroundColor = [UIColor clearColor];
-        _deviceLabel.text = stringForInputDevice(_device);
-        [self addSubview:_deviceLabel];
-
         // Buttons
         _buttonArray = [NSMutableArray array];
         for (int i = 0; i < [_outputs count]; i++) {
@@ -58,6 +49,15 @@
             [_buttonArray addObject:button];
             [self addSubview:button];
         }
+
+        // Label
+        _deviceLabel = [[UILabel alloc] init];
+        _deviceLabel.font = [Theme fontForSize:60];
+        _deviceLabel.adjustsFontSizeToFitWidth = YES;
+        _deviceLabel.textColor = [Theme lightGrayColor];
+        _deviceLabel.backgroundColor = [UIColor clearColor];
+        _deviceLabel.text = stringForInputDevice(_device);
+        [self addSubview:_deviceLabel];
     }
 
     return self;
@@ -82,7 +82,7 @@
     // Buttons
     for (int i = 0; i < [_buttonArray count]; i++) {
         AssignmentButton *button = [_buttonArray objectAtIndex:i];
-        button.frame = CGRectMake(((sectionWidth) * i), 0, sectionWidth - 1.0, self.bounds.size.height - 1);
+        button.frame = CGRectMake(((sectionWidth) * i) + i, 0, sectionWidth, self.bounds.size.height - 1);
     }
 }
 

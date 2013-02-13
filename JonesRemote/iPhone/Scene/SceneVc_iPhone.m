@@ -47,86 +47,20 @@
 
 #pragma mark - Actions
 
-- (IBAction)handleWatchTv:(id)sender {
-    /*[self showLoadingView];
-    [self matrixOn];
-
-    CommandCenter *commandCenter = [CommandCenter singleton];
-
-    [commandCenter sendCommand:[Command commandForDevice:kLeftTv command:kPowerOff queueable:YES]];
-    [commandCenter sendCommand:[Command commandForDevice:kRightTv command:kPowerOff queueable:YES]];
-
-    MatrixCommand *matrixCommand = [MatrixCommand matrixCommandAssignInput:kDVR toOutput:kCenterTv];
-    [commandCenter sendCommand:matrixCommand];
-
-    MatrixCommand *matrixCommand2 = [MatrixCommand matrixCommandAssignInput:kDVR toOutput:kAudioZone1];
-    [commandCenter sendCommand:matrixCommand2];
-
-    [commandCenter sendCommand:[Command commandForDevice:kDVR command:k7 queueable:YES]];
-    [commandCenter sendCommand:[Command commandForDevice:kDVR command:k2 queueable:YES]];
-    [commandCenter sendCommand:[Command commandForDevice:kDVR command:k9 queueable:YES]];
-    [commandCenter sendCommand:[Command commandForDevice:kDVR command:kSelect queueable:YES]];
-
-    Command *tvOn = [Command commandForDevice:kCenterTv command:kPowerOn queueable:YES];
-    tvOn.delegate = self;
-    tvOn.tag = kWatchTv;
-    [commandCenter sendCommand:tvOn];*/
+- (IBAction)handleCenterTV:(id)sender {
     [[CommandCenter singleton] setMatrixInput:InputDeviceDVR toOutput:OutputDeviceCenterTv];
     [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOn toIRDevice:IRDeviceCenterTv];
     [[CommandCenter singleton] setMatrixInput:InputDeviceDVR toOutput:OutputDeviceAudioZone1];
-
+    
     // Cleanup
     [[CommandCenter singleton] setMatrixInput:InputDeviceNone toOutput:OutputDeviceAudioZone2];
     [[CommandCenter singleton] setMatrixInput:InputDeviceNone toOutput:OutputDeviceAudioZone3];
     [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOff toIRDevice:IRDeviceLeftTv];
     [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOff toIRDevice:IRDeviceRightTv];
+
 }
 
-- (IBAction)handleSportsBar:(id)sender {
-    /*[self showLoadingView];
-    [self matrixOn];
-
-    CommandCenter *commandCenter = [CommandCenter singleton];
-
-    MatrixCommand *matrixCommand1 = [MatrixCommand matrixCommandAssignInput:kCableA toOutput:kLeftTv];
-    [commandCenter sendCommand:matrixCommand1];
-
-    MatrixCommand *matrixCommand2 = [MatrixCommand matrixCommandAssignInput:kDVR toOutput:kCenterTv];
-    [commandCenter sendCommand:matrixCommand2];
-
-    MatrixCommand *matrixCommand2b = [MatrixCommand matrixCommandAssignInput:kDVR toOutput:kAudioZone1];
-    [commandCenter sendCommand:matrixCommand2b];
-
-    MatrixCommand *matrixCommand3 = [MatrixCommand matrixCommandAssignInput:kCableB toOutput:kRightTv];
-    [commandCenter sendCommand:matrixCommand3];
-
-    // ESPN2
-    [commandCenter sendCommand:[Command commandForDevice:kCableA command:k7 queueable:YES]];
-    [commandCenter sendCommand:[Command commandForDevice:kCableA command:k3 queueable:YES]];
-    [commandCenter sendCommand:[Command commandForDevice:kCableA command:k0 queueable:YES]];
-    [commandCenter sendCommand:[Command commandForDevice:kCableA command:kSelect queueable:YES]];
-
-    // ESPNNEWS
-    [commandCenter sendCommand:[Command commandForDevice:kCableB command:k7 queueable:YES]];
-    [commandCenter sendCommand:[Command commandForDevice:kCableB command:k3 queueable:YES]];
-    [commandCenter sendCommand:[Command commandForDevice:kCableB command:k1 queueable:YES]];
-    [commandCenter sendCommand:[Command commandForDevice:kCableB command:kSelect queueable:YES]];
-
-    // ESPN
-    [commandCenter sendCommand:[Command commandForDevice:kDVR command:k7 queueable:YES]];
-    [commandCenter sendCommand:[Command commandForDevice:kDVR command:k2 queueable:YES]];
-    [commandCenter sendCommand:[Command commandForDevice:kDVR command:k9 queueable:YES]];
-    [commandCenter sendCommand:[Command commandForDevice:kDVR command:kSelect queueable:YES]];
-
-    // TV POWER
-    [commandCenter sendCommand:[Command commandForDevice:kLeftTv command:kPowerOn queueable:YES]];
-    [commandCenter sendCommand:[Command commandForDevice:kRightTv command:kPowerOn queueable:YES]];
-
-    Command *cmd = [Command commandForDevice:kCenterTv command:kPowerOn queueable:YES];
-    cmd.delegate = self;
-    cmd.tag = kSportsBar;
-    [commandCenter sendCommand:cmd];*/    
-    
+- (IBAction)handleSportsBar:(id)sender {  
     [[CommandCenter singleton] setMatrixInput:InputDeviceCableA toOutput:OutputDeviceLeftTv];
     [[CommandCenter singleton] setMatrixInput:InputDeviceDVR toOutput:OutputDeviceCenterTv];
     [[CommandCenter singleton] setMatrixInput:InputDeviceCableB toOutput:OutputDeviceRightTv];
@@ -137,39 +71,58 @@
 
     [[CommandCenter singleton] setMatrixInput:InputDeviceDVR toOutput:OutputDeviceAudioZone1];
     
-    // ESPN
+    // DVR Channel
     [[CommandCenter singleton] sendQueableIRCommand:IRCommand7 toIRDevice:IRDeviceDVR];
     [[CommandCenter singleton] sendQueableIRCommand:IRCommand2 toIRDevice:IRDeviceDVR];
     [[CommandCenter singleton] sendQueableIRCommand:IRCommand9 toIRDevice:IRDeviceDVR];
     [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:IRDeviceDVR];
 
-    // todo ESPN2 and ESPNNEWS
+    // Cable A Channel
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand3 toIRDevice:IRDeviceCableA];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand5 toIRDevice:IRDeviceCableA];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand5 toIRDevice:IRDeviceCableA];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:IRDeviceCableA];
+
+    
+    // Cable B Channel
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand8 toIRDevice:IRDeviceCableB];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand1 toIRDevice:IRDeviceCableB];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand9 toIRDevice:IRDeviceCableB];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:IRDeviceCableB];
     
     // Cleanup
-
     [[CommandCenter singleton] setMatrixInput:InputDeviceNone toOutput:OutputDeviceAudioZone2];
     [[CommandCenter singleton] setMatrixInput:InputDeviceNone toOutput:OutputDeviceAudioZone3];
 }
 
+- (IBAction)handleRecording:(id)sender {
+    
+    // DVR Channel
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand1 toIRDevice:IRDeviceDVR];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand0 toIRDevice:IRDeviceDVR];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand0 toIRDevice:IRDeviceDVR];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand0 toIRDevice:IRDeviceDVR];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:IRDeviceDVR];
+    
+    // Recorded Shows
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandRecordedShows toIRDevice:IRDeviceDVR];
+    
+    // Matrix assignment
+    [[CommandCenter singleton] setMatrixInput:InputDeviceDVR toOutput:OutputDeviceCenterTv];
+    [[CommandCenter singleton] setMatrixInput:InputDeviceDVR toOutput:OutputDeviceAudioZone1];
+    
+    // Power TV On
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOn toIRDevice:IRDeviceCenterTv];
+    
+    // Cleanup
+    [[CommandCenter singleton] setMatrixInput:InputDeviceNone toOutput:OutputDeviceAudioZone2];
+    [[CommandCenter singleton] setMatrixInput:InputDeviceNone toOutput:OutputDeviceAudioZone3];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOff toIRDevice:IRDeviceLeftTv];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOff toIRDevice:IRDeviceRightTv];    
+}
+
 - (IBAction)handleBluray:(id)sender {
-    /*[self showLoadingView];
-    [self matrixOn];
-
-    CommandCenter *commandCenter = [CommandCenter singleton];
-
-    [commandCenter sendCommand:[Command commandForDevice:kLeftTv command:kPowerOff queueable:YES]];
-    [commandCenter sendCommand:[Command commandForDevice:kRightTv command:kPowerOff queueable:YES]];
-
-    MatrixCommand *matrixCommand = [MatrixCommand matrixCommandAssignInput:kBluRay toOutput:kCenterTv];
-    [commandCenter sendCommand:matrixCommand];
-
-    MatrixCommand *matrixCommand2 = [MatrixCommand matrixCommandAssignInput:kBluRay toOutput:kAudioZone1];
-    [commandCenter sendCommand:matrixCommand2];
-
-    Command *cmd = [Command commandForDevice:kCenterTv command:kPowerOn queueable:YES];
-    cmd.delegate = self;
-    cmd.tag = kBluray;
-    [commandCenter sendCommand:cmd];*/
+    
     [[CommandCenter singleton] setMatrixInput:InputDeviceBluRay toOutput:OutputDeviceCenterTv];
     [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOn toIRDevice:IRDeviceCenterTv];
     [[CommandCenter singleton] setMatrixInput:InputDeviceBluRay toOutput:OutputDeviceAudioZone1];
@@ -181,63 +134,30 @@
     [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOff toIRDevice:IRDeviceRightTv];
 }
 
-- (IBAction)handleComputer:(id)sender {
-    /*[self showLoadingView];
-    [self matrixOn];
-
-    CommandCenter *commandCenter = [CommandCenter singleton];
-
-    [commandCenter sendCommand:[Command commandForDevice:kLeftTv command:kPowerOff queueable:YES]];
-    [commandCenter sendCommand:[Command commandForDevice:kRightTv command:kPowerOff queueable:YES]];
-
-    MatrixCommand *matrixCommand = [MatrixCommand matrixCommandAssignInput:kMac toOutput:kCenterTv];
-    [commandCenter sendCommand:matrixCommand];
-
-    MatrixCommand *matrixCommand2 = [MatrixCommand matrixCommandAssignInput:kMac toOutput:kAudioZone1];
-    [commandCenter sendCommand:matrixCommand2];
-
-    Command *cmd = [Command commandForDevice:kCenterTv command:kPowerOn queueable:YES];
-    cmd.delegate = self;
-    cmd.tag = kComputer;
-    [commandCenter sendCommand:cmd];*/
-
-    [[CommandCenter singleton] setMatrixInput:InputDeviceMac toOutput:OutputDeviceCenterTv];
+- (IBAction)handleAppleTV:(id)sender {
+    [[CommandCenter singleton] setMatrixInput:InputDeviceAppleTv toOutput:OutputDeviceCenterTv];
     [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOn toIRDevice:IRDeviceCenterTv];
-    [[CommandCenter singleton] setMatrixInput:InputDeviceMac toOutput:OutputDeviceAudioZone1];
-
+    [[CommandCenter singleton] setMatrixInput:InputDeviceAppleTv toOutput:OutputDeviceAudioZone1];
+    
     // Cleanup
     [[CommandCenter singleton] setMatrixInput:InputDeviceNone toOutput:OutputDeviceAudioZone2];
     [[CommandCenter singleton] setMatrixInput:InputDeviceNone toOutput:OutputDeviceAudioZone3];
     [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOff toIRDevice:IRDeviceLeftTv];
     [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOff toIRDevice:IRDeviceRightTv];
+    
+    // Wait for assignments to finish then launch remote
+    [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(handleTimer:) userInfo:nil repeats:NO];
+}
 
-    // todo wait then launch remote
+- (void)handleTimer:(NSTimer *)timer {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"remote://"]];
 }
 
-- (IBAction)handleWii:(id)sender {
-    /*[self showLoadingView];
-    [self matrixOn];
-
-    CommandCenter *commandCenter = [CommandCenter singleton];
-
-    [commandCenter sendCommand:[Command commandForDevice:kLeftTv command:kPowerOff queueable:YES]];
-    [commandCenter sendCommand:[Command commandForDevice:kRightTv command:kPowerOff queueable:YES]];
-
-    MatrixCommand *matrixCommand = [MatrixCommand matrixCommandAssignInput:kWii toOutput:kCenterTv];
-    [commandCenter sendCommand:matrixCommand];
-
-    MatrixCommand *matrixCommand2 = [MatrixCommand matrixCommandAssignInput:kWii toOutput:kAudioZone1];
-    [commandCenter sendCommand:matrixCommand2];
-
-    Command *cmd = [Command commandForDevice:kCenterTv command:kPowerOn queueable:YES];
-    cmd.delegate = self;
-    cmd.tag = kPlayWii;
-    [commandCenter sendCommand:cmd];*/
-    [[CommandCenter singleton] setMatrixInput:InputDeviceWii toOutput:OutputDeviceCenterTv];
+- (IBAction)handleMacMini:(id)sender {
+    [[CommandCenter singleton] setMatrixInput:InputDeviceMac toOutput:OutputDeviceCenterTv];
     [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOn toIRDevice:IRDeviceCenterTv];
-    [[CommandCenter singleton] setMatrixInput:InputDeviceWii toOutput:OutputDeviceAudioZone1];
-
+    [[CommandCenter singleton] setMatrixInput:InputDeviceMac toOutput:OutputDeviceAudioZone1];
+    
     // Cleanup
     [[CommandCenter singleton] setMatrixInput:InputDeviceNone toOutput:OutputDeviceAudioZone2];
     [[CommandCenter singleton] setMatrixInput:InputDeviceNone toOutput:OutputDeviceAudioZone3];
@@ -246,20 +166,6 @@
 }
 
 - (IBAction)handleAllOff:(id)sender {
-    /*[self showLoadingView];
-
-    CommandCenter *commandCenter = [CommandCenter singleton];
-
-    [commandCenter sendCommand:[Command commandForDevice:kLeftTv command:kPowerOff queueable:YES]];
-    [commandCenter sendCommand:[Command commandForDevice:kRightTv command:kPowerOff queueable:YES]];
-    [commandCenter sendCommand:[Command commandForDevice:kCenterTv command:kPowerOff queueable:YES]];
-
-    MatrixCommand *matrixCommand = [[MatrixCommand alloc] init];
-    matrixCommand.command = kPowerOff;
-    matrixCommand.delegate = self;
-    matrixCommand.tag = kAllOff;
-    [commandCenter sendCommand:matrixCommand];*/
-
     [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOff toIRDevice:IRDeviceLeftTv];
     [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOff toIRDevice:IRDeviceCenterTv];
     [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOff toIRDevice:IRDeviceRightTv];
@@ -273,8 +179,7 @@
     [[CommandCenter singleton] setMatrixInput:InputDeviceNone toOutput:OutputDeviceRightTv];
 }
 
-- (IBAction)handleRemote:(id)sender {
-    //AssignmentTvc_iPhone *assignmentTvc = [[AssignmentTvc_iPhone alloc] init];
+- (IBAction)handleInputs:(id)sender {
     AssignmentVc_iPhone *assignmentVc = [[AssignmentVc_iPhone alloc] init];
     [self.navigationController pushViewController:assignmentVc animated:YES];
 }

@@ -148,7 +148,23 @@
 }
 
 - (IBAction)handlePlusDay:(id)sender {
-    // todo
+    [[CommandCenter singleton] sendIRCommand:IRCommandPlusDay toIRDevice:_irDevice];
+}
+
+- (IBAction)handleMinusDay:(id)sender {
+    [[CommandCenter singleton] sendIRCommand:IRCommandMinusDay toIRDevice:_irDevice];
+}
+
+- (IBAction)handleLive:(id)sender {
+    [[CommandCenter singleton] sendIRCommand:IRCommandLive toIRDevice:_irDevice];
+}
+
+- (IBAction)handleChannelDown:(id)sender {
+    [[CommandCenter singleton] sendIRCommand:IRCommandMinusChannel toIRDevice:_irDevice];
+}
+
+- (IBAction)handleChannelUp:(id)sender {
+    [[CommandCenter singleton] sendIRCommand:IRCommandPlusChannel toIRDevice:_irDevice];
 }
 
 #pragma mark - Favorites
@@ -160,10 +176,222 @@
     [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
 }
 
-- (IBAction)handlePac12:(id)sender {
+- (IBAction)handleNFL:(id)sender {
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand3 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand5 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand5 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
 }
 
-- (IBAction)handleFoxSportsWest:(id)sender {
+- (IBAction)handlePac12:(id)sender {
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand8 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand1 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand9 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
+}
+
+- (IBAction)handleHboOD:(id)sender {
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand6 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand0 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand1 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
+}
+
+- (IBAction)handleHBO:(id)sender {
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand7 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand0 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand0 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
+}
+
+- (IBAction)handleCNN:(id)sender {
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand7 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand2 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand6 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
+}
+
+- (IBAction)handlePBS:(id)sender {
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand7 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand1 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand1 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
+}
+
+- (IBAction)handleFox:(id)sender {
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand7 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand0 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand5 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
+}
+
+- (IBAction)handleESPN2:(id)sender {
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand7 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand3 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand0 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
+}
+
+- (IBAction)handleRedZone:(id)sender {
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand3 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand5 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand6 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
+}
+
+- (IBAction)handleNbcSports:(id)sender {
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand7 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand4 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand1 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
+}
+
+- (IBAction)handleFoxBiz:(id)sender {
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand7 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand7 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand8 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
+}
+
+- (IBAction)handleCinemax:(id)sender {
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand7 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand0 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand1 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
+}
+
+- (IBAction)handleHLN:(id)sender {
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand7 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand2 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand8 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
+}
+
+- (IBAction)handleFX:(id)sender {
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand7 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand5 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand2 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
+}
+
+- (IBAction)handleNbc:(id)sender {
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand7 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand0 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand7 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
+}
+
+- (IBAction)handleESPNews:(id)sender {
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand7 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand8 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand8 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
+}
+
+- (IBAction)handleGolf:(id)sender {
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand7 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand5 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand8 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
+}
+
+- (IBAction)handleCbsSports:(id)sender {
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand7 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand9 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand0 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
+}
+
+- (IBAction)handleMSNBC:(id)sender {
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand7 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand5 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand0 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
+}
+
+- (IBAction)handleShowtime:(id)sender {
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand7 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand0 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand2 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
+}
+
+- (IBAction)handleBBC:(id)sender {
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand8 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand5 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand3 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
+}
+
+- (IBAction)handleTBS:(id)sender {
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand7 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand1 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand2 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
+}
+
+- (IBAction)handleCBS:(id)sender {
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand7 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand0 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand8 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
+}
+
+- (IBAction)handleEspnU:(id)sender {
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand7 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand8 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand2 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
+}
+
+- (IBAction)handleTennis:(id)sender {
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand4 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand1 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand0 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
+}
+
+- (IBAction)handleFoxSports:(id)sender {
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand7 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand3 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand1 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
+}
+
+- (IBAction)handleFCS:(id)sender {
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand4 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand0 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand6 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
+}
+
+- (IBAction)handleMoviesOD:(id)sender {
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand1 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand0 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand0 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand0 toIRDevice:_irDevice];    
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
+}
+
+- (IBAction)handleWeather:(id)sender {
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand7 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand4 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand6 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
+}
+
+- (IBAction)handleTNT:(id)sender {
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand7 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand2 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand7 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
+}
+
+- (IBAction)handleABC:(id)sender {
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand7 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand1 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand0 toIRDevice:_irDevice];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
 }
 
 @end

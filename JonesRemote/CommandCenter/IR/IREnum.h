@@ -10,10 +10,11 @@
 typedef enum {
     IRCommandNoCommand = 0,
     IRCommand0, IRCommand1, IRCommand2, IRCommand3, IRCommand4, IRCommand5, IRCommand6, IRCommand7, IRCommand8, IRCommand9,
-    IRCommandRewind, IRCommandFastForward, IRCommandPlay, IRCommandPause, IRCommandStop, IRCommandRecord,
+    IRCommandRewind, IRCommandFastForward, IRCommandPlay, IRCommandPause, IRCommandStop, IRCommandRecord, IRCommandLive,
     IRCommandGuide, IRCommandRecordedShows, IRCommandPageUp, IRCommandPageDown, IRCommandUp, IRCommandDown, IRCommandLeft, IRCommandRight, IRCommandSelect, IRCommandExit,
     IRCommandA, IRCommandB, IRCommandC, IRCommandInfo,
     IRCommandPowerOn, IRCommandPowerOff, IRCommandVolUp, IRCommandVolDown, IRCommandMute,
+    IRCommandPlusDay, IRCommandMinusDay, IRCommandPlusChannel, IRCommandMinusChannel,
     IRCommandStatus
 } IRCommand;
 
@@ -47,11 +48,11 @@ static inline NSString *stringForIRDevice(IRDevice irDevice) {
             break;
         }
         case IRDeviceBluRay: {
-            string = @"BLURAY";
+            string = @"BLU-RAY";
             break;
         }
         case IRDeviceMac: {
-            string = @"MAC";
+            string = @"MAC MINI";
             break;
         }
         case IRDeviceAppleTv: {

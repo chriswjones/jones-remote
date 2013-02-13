@@ -181,7 +181,7 @@ static inline NSString *stringForInputDevice(InputDevice inputDevice) {
             break;
         }
         case InputDeviceMac: {
-            string = @"MAC";
+            string = @"MAC MINI";
             break;
         }
         case InputDeviceAppleTv: {

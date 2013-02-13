@@ -32,9 +32,8 @@
                                                 [NSNumber numberWithInt:InputDeviceCableA],
                                                 [NSNumber numberWithInt:InputDeviceCableB],
                                                 [NSNumber numberWithInt:InputDeviceBluRay],
-                                                [NSNumber numberWithInt:InputDeviceMac],
                                                 [NSNumber numberWithInt:InputDeviceAppleTv],
-                                                [NSNumber numberWithInt:InputDeviceWii],
+                                                [NSNumber numberWithInt:InputDeviceMac],
                                                 nil];
 
         _imageArray = [NSArray arrayWithObjects:[UIImage imageNamed:@"tv_left"],
