@@ -16,6 +16,7 @@
     UIView *_loadingView;
     UIActivityIndicatorView *_activityView;
 }
+@synthesize scrollView = _scrollView;
 
 #pragma mark - View lifecycle
 
@@ -31,6 +32,11 @@
 - (void)viewDidDisappear:(BOOL)animated {
     [super viewDidDisappear:animated];
     [self hideLoadingView:NO];
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    _scrollView.contentSize = CGSizeMake(320, 459);
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
@@ -146,7 +152,7 @@
     [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOff toIRDevice:IRDeviceRightTv];
     
     // Wait for assignments to finish then launch remote
-    [NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(handleTimer:) userInfo:nil repeats:NO];
+    //[NSTimer scheduledTimerWithTimeInterval:5.0 target:self selector:@selector(handleTimer:) userInfo:nil repeats:NO];
 }
 
 - (void)handleTimer:(NSTimer *)timer {

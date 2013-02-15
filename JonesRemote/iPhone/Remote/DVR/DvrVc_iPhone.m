@@ -19,6 +19,8 @@
     CGFloat height = 261;
 
     self.scrollView.contentSize = CGSizeMake(width * 4, 261);
+
+    //self.favoritesView.frame = CGRectMake(0, 0, width, height);
     [self.scrollView addSubview:self.favoritesView];
 
     self.guideNavView.frame = CGRectMake(width, 0, width, height);

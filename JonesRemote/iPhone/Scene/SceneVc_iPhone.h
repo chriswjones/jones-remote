@@ -3,6 +3,8 @@
 
 @interface SceneVc_iPhone : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
 - (IBAction)handleCenterTV:(id)sender;
 - (IBAction)handleSportsBar:(id)sender;
 - (IBAction)handleRecording:(id)sender;
