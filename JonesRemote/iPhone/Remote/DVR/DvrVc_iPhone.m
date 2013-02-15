@@ -372,7 +372,6 @@
     [[CommandCenter singleton] sendQueableIRCommand:IRCommand0 toIRDevice:_irDevice];
     [[CommandCenter singleton] sendQueableIRCommand:IRCommand0 toIRDevice:_irDevice];
     [[CommandCenter singleton] sendQueableIRCommand:IRCommand0 toIRDevice:_irDevice];    
-    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:_irDevice];
 }
 
 - (IBAction)handleWeather:(id)sender {
