@@ -33,9 +33,10 @@
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
 			<object class="IBUIScrollView" id="840259563">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">292</int>
 				<string key="NSFrameSize">{568, 261}</string>
+				<reference key="NSSuperview"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<bool key="IBUIClipsSubviews">YES</bool>
 				<bool key="IBUIMultipleTouchEnabled">YES</bool>
@@ -50,7 +51,7 @@
 				<bool key="IBUIShowsVerticalScrollIndicator">NO</bool>
 			</object>
 			<object class="IBUIView" id="182875056">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">292</int>
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="IBUIButton" id="227697486">
@@ -836,6 +837,7 @@
 					</object>
 				</array>
 				<string key="NSFrameSize">{568, 261}</string>
+				<reference key="NSSuperview"/>
 				<reference key="NSNextKeyView" ref="227697486"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<object class="NSColor" key="IBUIBackgroundColor">
@@ -854,7 +856,6 @@
 						<int key="NSvFlags">295</int>
 						<string key="NSFrame">{{216, 0}, {135, 80}}</string>
 						<reference key="NSSuperview" ref="604077126"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="458025291"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="108743220"/>
@@ -887,7 +888,6 @@
 						<int key="NSvFlags">295</int>
 						<string key="NSFrame">{{75, 0}, {140, 80}}</string>
 						<reference key="NSSuperview" ref="604077126"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="29118903"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="108743220"/>
@@ -914,7 +914,6 @@
 						<int key="NSvFlags">295</int>
 						<string key="NSFrame">{{352, 0}, {140, 80}}</string>
 						<reference key="NSSuperview" ref="604077126"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="977302480"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="108743220"/>
@@ -934,7 +933,6 @@
 						<int key="NSvFlags">295</int>
 						<string key="NSFrame">{{216, 182}, {135, 80}}</string>
 						<reference key="NSSuperview" ref="604077126"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="221674967"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="108743220"/>
@@ -954,7 +952,6 @@
 						<int key="NSvFlags">295</int>
 						<string key="NSFrame">{{352, 81}, {140, 100}}</string>
 						<reference key="NSSuperview" ref="604077126"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="745188289"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="108743220"/>
@@ -974,7 +971,6 @@
 						<int key="NSvFlags">295</int>
 						<string key="NSFrame">{{75, 81}, {140, 100}}</string>
 						<reference key="NSSuperview" ref="604077126"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="430751182"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="108743220"/>
@@ -994,7 +990,6 @@
 						<int key="NSvFlags">295</int>
 						<string key="NSFrame">{{216, 81}, {135, 100}}</string>
 						<reference key="NSSuperview" ref="604077126"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="562431387"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="108743220"/>
@@ -1014,7 +1009,6 @@
 						<int key="NSvFlags">295</int>
 						<string key="NSFrame">{{352, 182}, {140, 80}}</string>
 						<reference key="NSSuperview" ref="604077126"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="1060956699"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="108743220"/>
@@ -1034,7 +1028,6 @@
 						<int key="NSvFlags">295</int>
 						<string key="NSFrame">{{75, 182}, {69, 80}}</string>
 						<reference key="NSSuperview" ref="604077126"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="230053871"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="108743220"/>
@@ -1054,7 +1047,6 @@
 						<int key="NSvFlags">295</int>
 						<string key="NSFrame">{{145, 182}, {70, 80}}</string>
 						<reference key="NSSuperview" ref="604077126"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="185765413"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="108743220"/>
@@ -1074,8 +1066,6 @@
 						<int key="NSvFlags">295</int>
 						<string key="NSFrame">{{493, 131}, {74, 131}}</string>
 						<reference key="NSSuperview" ref="604077126"/>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="108743220"/>
 						<bool key="IBUIOpaque">NO</bool>
@@ -1094,7 +1084,6 @@
 						<int key="NSvFlags">295</int>
 						<string key="NSFrame">{{493, 0}, {74, 130}}</string>
 						<reference key="NSSuperview" ref="604077126"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="210959598"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="108743220"/>
@@ -1114,7 +1103,6 @@
 						<int key="NSvFlags">295</int>
 						<string key="NSFrameSize">{74, 130}</string>
 						<reference key="NSSuperview" ref="604077126"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="270563599"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="108743220"/>
@@ -1137,7 +1125,6 @@
 						<int key="NSvFlags">295</int>
 						<string key="NSFrame">{{0, 131}, {74, 130}}</string>
 						<reference key="NSSuperview" ref="604077126"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="523934517"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="108743220"/>
@@ -1158,7 +1145,6 @@
 				</array>
 				<string key="NSFrameSize">{568, 261}</string>
 				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="890883042"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<object class="NSColor" key="IBUIBackgroundColor">
@@ -1169,7 +1155,7 @@
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
 			<object class="IBUIView" id="542038903">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">292</int>
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="IBUIButton" id="783585183">
@@ -1274,6 +1260,7 @@
 					</object>
 				</array>
 				<string key="NSFrameSize">{567, 261}</string>
+				<reference key="NSSuperview"/>
 				<reference key="NSNextKeyView" ref="212521302"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<object class="NSColor" key="IBUIBackgroundColor">
@@ -1283,7 +1270,7 @@
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
 			<object class="IBUIView" id="504413090">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">292</int>
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="IBUIButton" id="509360665">
@@ -1657,6 +1644,7 @@
 					</object>
 				</array>
 				<string key="NSFrameSize">{568, 261}</string>
+				<reference key="NSSuperview"/>
 				<reference key="NSNextKeyView" ref="459849421"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<object class="NSColor" key="IBUIBackgroundColor">
@@ -2934,371 +2922,7 @@
 			<nil key="sourceID"/>
 			<int key="maxID">306</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes">
-			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
-				<object class="IBPartialClassDescription">
-					<string key="className">DvrVc_iPhone</string>
-					<string key="superclassName">UIViewController</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="handle0:">id</string>
-						<string key="handle1:">id</string>
-						<string key="handle2:">id</string>
-						<string key="handle3:">id</string>
-						<string key="handle4:">id</string>
-						<string key="handle5:">id</string>
-						<string key="handle6:">id</string>
-						<string key="handle7:">id</string>
-						<string key="handle8:">id</string>
-						<string key="handle9:">id</string>
-						<string key="handleA:">id</string>
-						<string key="handleABC:">id</string>
-						<string key="handleBBC:">id</string>
-						<string key="handleC:">id</string>
-						<string key="handleCBS:">id</string>
-						<string key="handleCNN:">id</string>
-						<string key="handleCbsSports:">id</string>
-						<string key="handleChannelDown:">id</string>
-						<string key="handleChannelUp:">id</string>
-						<string key="handleCinemax:">id</string>
-						<string key="handleDown:">id</string>
-						<string key="handleESPN2:">id</string>
-						<string key="handleESPN:">id</string>
-						<string key="handleESPNews:">id</string>
-						<string key="handleEspnU:">id</string>
-						<string key="handleFCS:">id</string>
-						<string key="handleFX:">id</string>
-						<string key="handleFastForward:">id</string>
-						<string key="handleFox:">id</string>
-						<string key="handleFoxBiz:">id</string>
-						<string key="handleFoxSports:">id</string>
-						<string key="handleGolf:">id</string>
-						<string key="handleGuide:">id</string>
-						<string key="handleHBO:">id</string>
-						<string key="handleHLN:">id</string>
-						<string key="handleHboOD:">id</string>
-						<string key="handleLeft:">id</string>
-						<string key="handleLive:">id</string>
-						<string key="handleMSNBC:">id</string>
-						<string key="handleMinusDay:">id</string>
-						<string key="handleMoviesOD:">id</string>
-						<string key="handleNFL:">id</string>
-						<string key="handleNbc:">id</string>
-						<string key="handleNbcSports:">id</string>
-						<string key="handlePBS:">id</string>
-						<string key="handlePac12:">id</string>
-						<string key="handlePageDown:">id</string>
-						<string key="handlePageUp:">id</string>
-						<string key="handlePause:">id</string>
-						<string key="handlePlay:">id</string>
-						<string key="handlePlusDay:">id</string>
-						<string key="handleRecord:">id</string>
-						<string key="handleRecordings:">id</string>
-						<string key="handleRedZone:">id</string>
-						<string key="handleRewind:">id</string>
-						<string key="handleRight:">id</string>
-						<string key="handleSelect:">id</string>
-						<string key="handleShowtime:">id</string>
-						<string key="handleStop:">id</string>
-						<string key="handleTBS:">id</string>
-						<string key="handleTNT:">id</string>
-						<string key="handleTennis:">id</string>
-						<string key="handleUp:">id</string>
-						<string key="handleWeather:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="handle0:">
-							<string key="name">handle0:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handle1:">
-							<string key="name">handle1:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handle2:">
-							<string key="name">handle2:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handle3:">
-							<string key="name">handle3:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handle4:">
-							<string key="name">handle4:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handle5:">
-							<string key="name">handle5:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handle6:">
-							<string key="name">handle6:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handle7:">
-							<string key="name">handle7:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handle8:">
-							<string key="name">handle8:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handle9:">
-							<string key="name">handle9:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleA:">
-							<string key="name">handleA:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleABC:">
-							<string key="name">handleABC:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleBBC:">
-							<string key="name">handleBBC:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleC:">
-							<string key="name">handleC:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleCBS:">
-							<string key="name">handleCBS:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleCNN:">
-							<string key="name">handleCNN:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleCbsSports:">
-							<string key="name">handleCbsSports:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleChannelDown:">
-							<string key="name">handleChannelDown:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleChannelUp:">
-							<string key="name">handleChannelUp:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleCinemax:">
-							<string key="name">handleCinemax:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleDown:">
-							<string key="name">handleDown:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleESPN2:">
-							<string key="name">handleESPN2:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleESPN:">
-							<string key="name">handleESPN:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleESPNews:">
-							<string key="name">handleESPNews:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleEspnU:">
-							<string key="name">handleEspnU:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleFCS:">
-							<string key="name">handleFCS:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleFX:">
-							<string key="name">handleFX:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleFastForward:">
-							<string key="name">handleFastForward:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleFox:">
-							<string key="name">handleFox:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleFoxBiz:">
-							<string key="name">handleFoxBiz:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleFoxSports:">
-							<string key="name">handleFoxSports:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleGolf:">
-							<string key="name">handleGolf:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleGuide:">
-							<string key="name">handleGuide:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleHBO:">
-							<string key="name">handleHBO:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleHLN:">
-							<string key="name">handleHLN:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleHboOD:">
-							<string key="name">handleHboOD:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleLeft:">
-							<string key="name">handleLeft:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleLive:">
-							<string key="name">handleLive:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleMSNBC:">
-							<string key="name">handleMSNBC:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleMinusDay:">
-							<string key="name">handleMinusDay:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleMoviesOD:">
-							<string key="name">handleMoviesOD:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleNFL:">
-							<string key="name">handleNFL:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleNbc:">
-							<string key="name">handleNbc:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleNbcSports:">
-							<string key="name">handleNbcSports:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handlePBS:">
-							<string key="name">handlePBS:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handlePac12:">
-							<string key="name">handlePac12:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handlePageDown:">
-							<string key="name">handlePageDown:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handlePageUp:">
-							<string key="name">handlePageUp:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handlePause:">
-							<string key="name">handlePause:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handlePlay:">
-							<string key="name">handlePlay:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handlePlusDay:">
-							<string key="name">handlePlusDay:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleRecord:">
-							<string key="name">handleRecord:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleRecordings:">
-							<string key="name">handleRecordings:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleRedZone:">
-							<string key="name">handleRedZone:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleRewind:">
-							<string key="name">handleRewind:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleRight:">
-							<string key="name">handleRight:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleSelect:">
-							<string key="name">handleSelect:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleShowtime:">
-							<string key="name">handleShowtime:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleStop:">
-							<string key="name">handleStop:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleTBS:">
-							<string key="name">handleTBS:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleTNT:">
-							<string key="name">handleTNT:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleTennis:">
-							<string key="name">handleTennis:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleUp:">
-							<string key="name">handleUp:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="handleWeather:">
-							<string key="name">handleWeather:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="favoritesView">UIView</string>
-						<string key="guideNavView">UIView</string>
-						<string key="numberPadView">UIView</string>
-						<string key="scrollView">UIScrollView</string>
-						<string key="showControlView">UIView</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="favoritesView">
-							<string key="name">favoritesView</string>
-							<string key="candidateClassName">UIView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="guideNavView">
-							<string key="name">guideNavView</string>
-							<string key="candidateClassName">UIView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="numberPadView">
-							<string key="name">numberPadView</string>
-							<string key="candidateClassName">UIView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="scrollView">
-							<string key="name">scrollView</string>
-							<string key="candidateClassName">UIScrollView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="showControlView">
-							<string key="name">showControlView</string>
-							<string key="candidateClassName">UIView</string>
-						</object>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/DvrVc_iPhone.h</string>
-					</object>
-				</object>
-			</array>
-		</object>
+		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>

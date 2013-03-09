@@ -10,6 +10,7 @@
 #import "IRHardware.h"
 #import "TimeWarnerDVR.h"
 #import "PanasonicPlasmaTV.h"
+#import "BluRay.h"
 
 #define CONNECT_SOCKET_TIMEOUT 10
 #define MATRIX_COMMAND_TIMEOUT 1
@@ -59,7 +60,7 @@ SINGLETON(CommandCenter)
     }
 
     if (![_receiverSocket isConnected]) {
-        [_matrixSocket connectToHost:@"192.168.0.202" onPort:4999 error:nil];
+        [_receiverSocket connectToHost:@"192.168.0.202" onPort:4999 error:nil];
     }
 
     if (![_ir1Socket isConnected]) {
@@ -68,6 +69,24 @@ SINGLETON(CommandCenter)
 
     if (![_ir2Socket isConnected]) {
         [_ir2Socket connectToHost:@"192.168.0.202" onPort:4998 error:nil];
+    }
+}
+
+- (void)disconnectSockets {
+    if ([_matrixSocket isConnected]) {
+        [_matrixSocket disconnect];
+    }
+    
+    if ([_receiverSocket isConnected]) {
+        [_receiverSocket disconnect];
+    }
+    
+    if ([_ir1Socket isConnected]) {
+        [_ir1Socket disconnect];
+    }
+    
+    if ([_ir2Socket isConnected]) {
+        [_ir2Socket disconnect];
     }
 }
 
@@ -125,6 +144,9 @@ SINGLETON(CommandCenter)
         case IRDeviceRightTv:
             class = [PanasonicPlasmaTV class];
             break;
+        case IRDeviceBluRay:
+            class = [BluRay class];
+            break;
         default:
             break;
     }
@@ -146,6 +168,8 @@ SINGLETON(CommandCenter)
             return @"5:2";
         case IRDeviceRightTv:
             return @"5:3";
+        case IRDeviceBluRay:
+            return @"4:1";
         default:
             return @"";
     }
@@ -160,9 +184,7 @@ SINGLETON(CommandCenter)
         case IRDeviceCableA:
         case IRDeviceCableB:
             return _ir1Socket;
-        case IRDeviceMac:
-        case IRDeviceAppleTv:
-        case IRDeviceWii:
+        case IRDeviceBluRay:
             return _ir2Socket;
         default:
             return nil;

@@ -1,6 +1,7 @@
 #import "RemoteVc_iPhone.h"
 #import "DvrVc_iPhone.h"
 #import "Theme.h"
+#import "BluRayVc_iPhone.h"
 
 
 @implementation RemoteVc_iPhone {
@@ -70,6 +71,12 @@
             [self.remoteContainer addSubview:_remoteVc.view];
             break;
         }
+        case IRDeviceBluRay: {
+            _remoteVc = [[BluRayVc_iPhone alloc] init];
+            [self.remoteContainer addSubview:_remoteVc.view];
+            break;
+        }
+
         default:
             break;
     }
@@ -88,7 +95,11 @@
             [self bindIRDevice:IRDeviceCableB];
             break;
         }
-        case IRDeviceCableB:
+        case IRDeviceCableB: {
+            [self bindIRDevice:IRDeviceBluRay];
+            break;
+        }
+        case IRDeviceBluRay:
         default:
             break;
     }
@@ -102,6 +113,10 @@
         }
         case IRDeviceCableB: {
             [self bindIRDevice:IRDeviceCableA];
+            break;
+        }
+        case IRDeviceBluRay: {
+            [self bindIRDevice:IRDeviceCableB];
             break;
         }
         case IRDeviceDVR:

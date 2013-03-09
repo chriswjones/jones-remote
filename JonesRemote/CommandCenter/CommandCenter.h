@@ -19,6 +19,8 @@
 
 - (void)connectSockets;
 
+- (void)disconnectSockets;
+
 - (void)setMatrixInput:(InputDevice)inputDevice toOutput:(OutputDevice)outputDevice;
 
 - (void)sendIRCommand:(IRCommand)irCommand toIRDevice:(IRDevice)irDevice;

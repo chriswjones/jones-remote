@@ -15,7 +15,7 @@ typedef enum {
     IRCommandA, IRCommandB, IRCommandC, IRCommandInfo,
     IRCommandPowerOn, IRCommandPowerOff, IRCommandVolUp, IRCommandVolDown, IRCommandMute,
     IRCommandPlusDay, IRCommandMinusDay, IRCommandPlusChannel, IRCommandMinusChannel,
-    IRCommandStatus
+    IRCommandStatus, IRCommandBack
 } IRCommand;
 
 typedef enum {

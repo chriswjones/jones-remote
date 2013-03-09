@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A41608D0128B56CB5294B61 /* BluRayVc_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A41602B31AA2BD0E08F72BC /* BluRayVc_iPhone.xib */; };
 		5A4160FC76F8457988A315AF /* audio_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A41639EB1D121A764FA269B /* audio_1@2x.png */; };
 		5A41610184C19F628CA2E73B /* AssignmentRowControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4163697DCE59418166FE95 /* AssignmentRowControl.m */; };
 		5A41636381FFFADBD7FE1C7E /* back_bbi_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A416808BF007781CCDFA8F6 /* back_bbi_highlighted@2x.png */; };
@@ -29,6 +30,7 @@
 		5A416E47A1156F24007A7AE7 /* audio_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A4165FB88EC38AC51F5F555 /* audio_2@2x.png */; };
 		5A416EBD791E9060C91A0687 /* AssignmentVc_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A416D5EE8F2D8C189771E93 /* AssignmentVc_iPhone.xib */; };
 		5A416EBDBF71F4638EC4A386 /* bbi_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A416410D4DE560F763AB05A /* bbi_highlighted@2x.png */; };
+		5A416F1A4B3E7AB98768CFD0 /* BluRayVc_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A41660672C0B1358027BAAB /* BluRayVc_iPhone.m */; };
 		76E7C73286F44FD20C7CCA35 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E7C73286F44FD20C7CCA34 /* UIKit.framework */; };
 		76E7C73286F44FD20C7CCA37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E7C73286F44FD20C7CCA36 /* Foundation.framework */; };
 		76E7C73286F44FD20C7CCA39 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E7C73286F44FD20C7CCA38 /* CoreGraphics.framework */; };
@@ -86,6 +88,7 @@
 		835BAA9016C6D91B00DE682F /* showtime@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 835BAA7616C6D91B00DE682F /* showtime@2x.png */; };
 		835BAA9116C6D91B00DE682F /* tennis@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 835BAA7716C6D91B00DE682F /* tennis@2x.png */; };
 		835BAA9216C6D91B00DE682F /* weatherChannel@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 835BAA7816C6D91B00DE682F /* weatherChannel@2x.png */; };
+		838CB17E16E2D2CA001BE046 /* BluRay.m in Sources */ = {isa = PBXBuildFile; fileRef = 838CB17D16E2D2CA001BE046 /* BluRay.m */; };
 		83996A8B16C98ADA00361F18 /* scenesHeader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83996A8A16C98ADA00361F18 /* scenesHeader@2x.png */; };
 		83996A8E16C995D800361F18 /* inputs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83996A8C16C995D800361F18 /* inputs@2x.png */; };
 		83996A8F16C995D800361F18 /* rotate@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 83996A8D16C995D800361F18 /* rotate@2x.png */; };
@@ -134,14 +137,17 @@
 
 /* Begin PBXFileReference section */
 		5A416014B6C245D75E364C0E /* tv_left@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv_left@2x.png"; sourceTree = "<group>"; };
+		5A41602B31AA2BD0E08F72BC /* BluRayVc_iPhone.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BluRayVc_iPhone.xib; sourceTree = "<group>"; };
 		5A416064A23E7AFD13EF4263 /* audio_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audio_3@2x.png"; sourceTree = "<group>"; };
 		5A4160EEFFF46BC345B52E44 /* AssignmentVc_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignmentVc_iPhone.h; sourceTree = "<group>"; };
 		5A4161F89D607E27C84051A8 /* bbi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bbi@2x.png"; sourceTree = "<group>"; };
 		5A4163697DCE59418166FE95 /* AssignmentRowControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignmentRowControl.m; sourceTree = "<group>"; };
 		5A41639EB1D121A764FA269B /* audio_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audio_1@2x.png"; sourceTree = "<group>"; };
 		5A4163CAA638F584E0200545 /* AssignmentRowControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignmentRowControl.h; sourceTree = "<group>"; };
+		5A4164062C5B88FDA485F7F7 /* BluRayVc_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluRayVc_iPhone.h; sourceTree = "<group>"; };
 		5A416410D4DE560F763AB05A /* bbi_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bbi_highlighted@2x.png"; sourceTree = "<group>"; };
 		5A4165FB88EC38AC51F5F555 /* audio_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audio_2@2x.png"; sourceTree = "<group>"; };
+		5A41660672C0B1358027BAAB /* BluRayVc_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluRayVc_iPhone.m; sourceTree = "<group>"; };
 		5A41662E020FAEF909CD611F /* Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Theme.h; sourceTree = "<group>"; };
 		5A41663267F21E137437D8EF /* tv_center@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv_center@2x.png"; sourceTree = "<group>"; };
 		5A4167118CD0F7D34CF91F8B /* tv_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv_right@2x.png"; sourceTree = "<group>"; };
@@ -226,6 +232,8 @@
 		835BAA7716C6D91B00DE682F /* tennis@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tennis@2x.png"; sourceTree = "<group>"; };
 		835BAA7816C6D91B00DE682F /* weatherChannel@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weatherChannel@2x.png"; sourceTree = "<group>"; };
 		835BE79E16209881000484E7 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		838CB17C16E2D2CA001BE046 /* BluRay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluRay.h; sourceTree = "<group>"; };
+		838CB17D16E2D2CA001BE046 /* BluRay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluRay.m; sourceTree = "<group>"; };
 		83996A8A16C98ADA00361F18 /* scenesHeader@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scenesHeader@2x.png"; sourceTree = "<group>"; };
 		83996A8C16C995D800361F18 /* inputs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inputs@2x.png"; sourceTree = "<group>"; };
 		83996A8D16C995D800361F18 /* rotate@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "rotate@2x.png"; sourceTree = "<group>"; };
@@ -341,6 +349,9 @@
 		5A416CE26FB737D702D1D55A /* BluRay */ = {
 			isa = PBXGroup;
 			children = (
+				5A4164062C5B88FDA485F7F7 /* BluRayVc_iPhone.h */,
+				5A41660672C0B1358027BAAB /* BluRayVc_iPhone.m */,
+				5A41602B31AA2BD0E08F72BC /* BluRayVc_iPhone.xib */,
 			);
 			path = BluRay;
 			sourceTree = "<group>";
@@ -549,6 +560,8 @@
 				83EDEF5A15C2F50E00588FF1 /* TimeWarnerDVR.h */,
 				83EDEF5A15C2F50E00588FEF /* TimeWarnerDVR.m */,
 				83EDEF5A15C2F50E00588FED /* IRHardware.h */,
+				838CB17C16E2D2CA001BE046 /* BluRay.h */,
+				838CB17D16E2D2CA001BE046 /* BluRay.m */,
 			);
 			path = IR;
 			sourceTree = "<group>";
@@ -750,6 +763,7 @@
 				839F60F816CB32110011CD6C /* scene_recording_large@2x.png in Resources */,
 				839F60F916CB32110011CD6C /* scene_sportsBar_large@2x.png in Resources */,
 				839F60FA16CB41500011CD6C /* Default-568h@2x.png in Resources */,
+				5A41608D0128B56CB5294B61 /* BluRayVc_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -798,6 +812,8 @@
 				5A41610184C19F628CA2E73B /* AssignmentRowControl.m in Sources */,
 				5A41685F610594E38352D2F8 /* Theme.m in Sources */,
 				83F2B42A16C44BE300993AC9 /* TvVolumeVc_iPhone.m in Sources */,
+				5A416F1A4B3E7AB98768CFD0 /* BluRayVc_iPhone.m in Sources */,
+				838CB17E16E2D2CA001BE046 /* BluRay.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
