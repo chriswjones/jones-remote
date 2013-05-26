@@ -30,6 +30,7 @@
 		5A416E47A1156F24007A7AE7 /* audio_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A4165FB88EC38AC51F5F555 /* audio_2@2x.png */; };
 		5A416EBD791E9060C91A0687 /* AssignmentVc_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A416D5EE8F2D8C189771E93 /* AssignmentVc_iPhone.xib */; };
 		5A416EBDBF71F4638EC4A386 /* bbi_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A416410D4DE560F763AB05A /* bbi_highlighted@2x.png */; };
+		5A416EF555381A6992F66774 /* RemoteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4167D1A8952C2E77585E53 /* RemoteButton.m */; };
 		5A416F1A4B3E7AB98768CFD0 /* BluRayVc_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A41660672C0B1358027BAAB /* BluRayVc_iPhone.m */; };
 		76E7C73286F44FD20C7CCA35 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E7C73286F44FD20C7CCA34 /* UIKit.framework */; };
 		76E7C73286F44FD20C7CCA37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E7C73286F44FD20C7CCA36 /* Foundation.framework */; };
@@ -151,8 +152,10 @@
 		5A41662E020FAEF909CD611F /* Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Theme.h; sourceTree = "<group>"; };
 		5A41663267F21E137437D8EF /* tv_center@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv_center@2x.png"; sourceTree = "<group>"; };
 		5A4167118CD0F7D34CF91F8B /* tv_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv_right@2x.png"; sourceTree = "<group>"; };
+		5A416743BA7E91F554944219 /* RemoteButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteButton.h; sourceTree = "<group>"; };
 		5A41674A89BAB93AFFA2ED65 /* Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Theme.m; sourceTree = "<group>"; };
 		5A4167C661088C3AC04FDF28 /* back_bbi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_bbi@2x.png"; sourceTree = "<group>"; };
+		5A4167D1A8952C2E77585E53 /* RemoteButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteButton.m; sourceTree = "<group>"; };
 		5A416808BF007781CCDFA8F6 /* back_bbi_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_bbi_highlighted@2x.png"; sourceTree = "<group>"; };
 		5A41692C498DDF579E17ECB7 /* arrow_R_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_R_highlighted@2x.png"; sourceTree = "<group>"; };
 		5A4169CA5D12C7B05A98E5EA /* AssignmentVc_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignmentVc_iPhone.m; sourceTree = "<group>"; };
@@ -574,6 +577,8 @@
 				83EDEF5A15C2F50E00588FF8 /* RemoteVc_iPhone.h */,
 				83EDEF5A15C2F50E00588FF7 /* DVR */,
 				5A416CE26FB737D702D1D55A /* BluRay */,
+				5A4167D1A8952C2E77585E53 /* RemoteButton.m */,
+				5A416743BA7E91F554944219 /* RemoteButton.h */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -814,6 +819,7 @@
 				83F2B42A16C44BE300993AC9 /* TvVolumeVc_iPhone.m in Sources */,
 				5A416F1A4B3E7AB98768CFD0 /* BluRayVc_iPhone.m in Sources */,
 				838CB17E16E2D2CA001BE046 /* BluRay.m in Sources */,
+				5A416EF555381A6992F66774 /* RemoteButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

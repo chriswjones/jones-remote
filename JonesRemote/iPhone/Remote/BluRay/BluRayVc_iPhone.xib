@@ -2,10 +2,10 @@
 <archive type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1552</int>
-		<string key="IBDocument.SystemVersion">12C3103</string>
+		<string key="IBDocument.SystemVersion">12D78</string>
 		<string key="IBDocument.InterfaceBuilderVersion">3084</string>
-		<string key="IBDocument.AppKitVersion">1187.34</string>
-		<string key="IBDocument.HIToolboxVersion">625.00</string>
+		<string key="IBDocument.AppKitVersion">1187.37</string>
+		<string key="IBDocument.HIToolboxVersion">626.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 			<string key="NS.object.0">2083</string>
@@ -37,6 +37,7 @@
 				<int key="NSvFlags">292</int>
 				<string key="NSFrameSize">{568, 261}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<bool key="IBUIClipsSubviews">YES</bool>
@@ -60,6 +61,7 @@
 						<int key="NSvFlags">295</int>
 						<string key="NSFrame">{{361, 0}, {206, 261}}</string>
 						<reference key="NSSuperview" ref="743621888"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor" id="69217112">
@@ -98,6 +100,7 @@
 						<int key="NSvFlags">295</int>
 						<string key="NSFrameSize">{180, 161}</string>
 						<reference key="NSSuperview" ref="743621888"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="634379584"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="69217112"/>
@@ -117,6 +120,7 @@
 						<int key="NSvFlags">295</int>
 						<string key="NSFrame">{{0, 162}, {180, 101}}</string>
 						<reference key="NSSuperview" ref="743621888"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="1019218476"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="69217112"/>
@@ -136,6 +140,7 @@
 						<int key="NSvFlags">295</int>
 						<string key="NSFrame">{{181, 162}, {179, 103}}</string>
 						<reference key="NSSuperview" ref="743621888"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="628604737"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="69217112"/>
@@ -155,6 +160,7 @@
 						<int key="NSvFlags">295</int>
 						<string key="NSFrame">{{181, 0}, {179, 161}}</string>
 						<reference key="NSSuperview" ref="743621888"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="990043097"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="69217112"/>
@@ -172,6 +178,7 @@
 				</array>
 				<string key="NSFrameSize">{567, 261}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="161938590"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<object class="NSColor" key="IBUIBackgroundColor">
@@ -189,6 +196,7 @@
 						<int key="NSvFlags">295</int>
 						<string key="NSFrame">{{216, 0}, {135, 80}}</string>
 						<reference key="NSSuperview" ref="44919536"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="498041986"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="69217112"/>
@@ -221,6 +229,7 @@
 						<int key="NSvFlags">295</int>
 						<string key="NSFrame">{{75, 0}, {140, 80}}</string>
 						<reference key="NSSuperview" ref="44919536"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="650923913"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="69217112"/>
@@ -247,6 +256,7 @@
 						<int key="NSvFlags">295</int>
 						<string key="NSFrame">{{352, 0}, {140, 80}}</string>
 						<reference key="NSSuperview" ref="44919536"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="1071089509"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="69217112"/>
@@ -266,6 +276,7 @@
 						<int key="NSvFlags">295</int>
 						<string key="NSFrame">{{216, 182}, {135, 80}}</string>
 						<reference key="NSSuperview" ref="44919536"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="533304676"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="69217112"/>
@@ -285,6 +296,7 @@
 						<int key="NSvFlags">295</int>
 						<string key="NSFrame">{{352, 81}, {140, 100}}</string>
 						<reference key="NSSuperview" ref="44919536"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="61390330"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="69217112"/>
@@ -304,6 +316,7 @@
 						<int key="NSvFlags">295</int>
 						<string key="NSFrame">{{75, 81}, {140, 100}}</string>
 						<reference key="NSSuperview" ref="44919536"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="343418897"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="69217112"/>
@@ -323,6 +336,7 @@
 						<int key="NSvFlags">295</int>
 						<string key="NSFrame">{{216, 81}, {135, 100}}</string>
 						<reference key="NSSuperview" ref="44919536"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="511613662"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="69217112"/>
@@ -342,6 +356,7 @@
 						<int key="NSvFlags">295</int>
 						<string key="NSFrame">{{352, 182}, {140, 80}}</string>
 						<reference key="NSSuperview" ref="44919536"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="369065847"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="69217112"/>
@@ -361,6 +376,7 @@
 						<int key="NSvFlags">295</int>
 						<string key="NSFrame">{{75, 182}, {69, 80}}</string>
 						<reference key="NSSuperview" ref="44919536"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="171461201"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="69217112"/>
@@ -380,6 +396,7 @@
 						<int key="NSvFlags">295</int>
 						<string key="NSFrame">{{145, 182}, {70, 80}}</string>
 						<reference key="NSSuperview" ref="44919536"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="831810768"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="69217112"/>
@@ -399,6 +416,7 @@
 						<int key="NSvFlags">295</int>
 						<string key="NSFrame">{{493, 131}, {74, 131}}</string>
 						<reference key="NSSuperview" ref="44919536"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="69217112"/>
@@ -418,6 +436,7 @@
 						<int key="NSvFlags">295</int>
 						<string key="NSFrame">{{493, 0}, {74, 130}}</string>
 						<reference key="NSSuperview" ref="44919536"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="139381952"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="69217112"/>
@@ -437,6 +456,7 @@
 						<int key="NSvFlags">295</int>
 						<string key="NSFrameSize">{74, 130}</string>
 						<reference key="NSSuperview" ref="44919536"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="501688833"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="69217112"/>
@@ -459,6 +479,7 @@
 						<int key="NSvFlags">295</int>
 						<string key="NSFrame">{{0, 131}, {74, 130}}</string>
 						<reference key="NSSuperview" ref="44919536"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="38720163"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<reference key="IBUIBackgroundColor" ref="69217112"/>
@@ -479,6 +500,7 @@
 				</array>
 				<string key="NSFrameSize">{568, 261}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="773760536"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<object class="NSColor" key="IBUIBackgroundColor">
@@ -771,45 +793,64 @@
 				<string key="-1.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="-2.CustomClassName">UIResponder</string>
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="10.CustomClassName">RemoteButton</string>
 				<string key="10.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<real value="1" key="10.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="32.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="33.CustomClassName">RemoteButton</string>
 				<string key="33.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<real value="1" key="33.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<string key="34.CustomClassName">RemoteButton</string>
 				<string key="34.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<real value="0.0" key="34.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<string key="35.CustomClassName">RemoteButton</string>
 				<string key="35.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<real value="0.0" key="35.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<string key="36.CustomClassName">RemoteButton</string>
 				<string key="36.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<real value="0.0" key="36.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<string key="37.CustomClassName">RemoteButton</string>
 				<string key="37.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<real value="0.0" key="37.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<string key="38.CustomClassName">RemoteButton</string>
 				<string key="38.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<real value="0.0" key="38.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<string key="39.CustomClassName">RemoteButton</string>
 				<string key="39.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<real value="0.0" key="39.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="4.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="40.CustomClassName">RemoteButton</string>
 				<string key="40.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<real value="0.0" key="40.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<string key="41.CustomClassName">RemoteButton</string>
 				<string key="41.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<real value="0.0" key="41.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<string key="42.CustomClassName">RemoteButton</string>
 				<string key="42.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<real value="1" key="42.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<string key="43.CustomClassName">RemoteButton</string>
 				<string key="43.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<real value="0.0" key="43.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<string key="44.CustomClassName">RemoteButton</string>
 				<string key="44.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<real value="0.0" key="44.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<string key="45.CustomClassName">RemoteButton</string>
 				<string key="45.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<real value="0.0" key="45.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<string key="46.CustomClassName">RemoteButton</string>
 				<string key="46.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<real value="1" key="46.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 				<string key="5.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
+				<string key="6.CustomClassName">RemoteButton</string>
 				<string key="6.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<real value="1" key="6.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<string key="7.CustomClassName">RemoteButton</string>
 				<string key="7.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<real value="1" key="7.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<string key="8.CustomClassName">RemoteButton</string>
 				<string key="8.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<real value="1" key="8.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
+				<string key="9.CustomClassName">RemoteButton</string>
 				<string key="9.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<real value="1" key="9.IBUIButtonInspectorSelectedStateConfigurationMetadataKey"/>
 			</dictionary>
@@ -819,7 +860,89 @@
 			<nil key="sourceID"/>
 			<int key="maxID">129</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes"/>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<object class="IBPartialClassDescription">
+					<string key="className">BluRayVc_iPhone</string>
+					<string key="superclassName">UIViewController</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="handleBack:">id</string>
+						<string key="handleDiscreteOff:">id</string>
+						<string key="handleDiscreteOn:">id</string>
+						<string key="handleDown:">id</string>
+						<string key="handleLeft:">id</string>
+						<string key="handleRight:">id</string>
+						<string key="handleSelect:">id</string>
+						<string key="handleUp:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="handleBack:">
+							<string key="name">handleBack:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="handleDiscreteOff:">
+							<string key="name">handleDiscreteOff:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="handleDiscreteOn:">
+							<string key="name">handleDiscreteOn:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="handleDown:">
+							<string key="name">handleDown:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="handleLeft:">
+							<string key="name">handleLeft:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="handleRight:">
+							<string key="name">handleRight:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="handleSelect:">
+							<string key="name">handleSelect:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="handleUp:">
+							<string key="name">handleUp:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="navView">UIView</string>
+						<string key="scrollView">UIScrollView</string>
+						<string key="showControlView">UIView</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="navView">
+							<string key="name">navView</string>
+							<string key="candidateClassName">UIView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="scrollView">
+							<string key="name">scrollView</string>
+							<string key="candidateClassName">UIScrollView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="showControlView">
+							<string key="name">showControlView</string>
+							<string key="candidateClassName">UIView</string>
+						</object>
+					</dictionary>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/BluRayVc_iPhone.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">RemoteButton</string>
+					<string key="superclassName">UIButton</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/RemoteButton.h</string>
+					</object>
+				</object>
+			</array>
+		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>

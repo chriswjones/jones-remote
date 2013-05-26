@@ -9,12 +9,10 @@
 
 
 @interface BluRayVc_iPhone : UIViewController
-
 @property(strong, nonatomic) IBOutlet UIScrollView *scrollView;
-
 @property(strong, nonatomic) IBOutlet UIView *navView;
-
 @property(strong, nonatomic) IBOutlet UIView *showControlView;
+
 
 - (IBAction)handleUp:(id)sender;
 - (IBAction)handleDown:(id)sender;

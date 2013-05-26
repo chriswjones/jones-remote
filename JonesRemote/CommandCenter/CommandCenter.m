@@ -92,6 +92,14 @@ SINGLETON(CommandCenter)
 
 #pragma mark - Matrix Commands
 
+- (void)powerMatrixOn {
+    [_matrixSocket writeData:stringForMatrixCommand(MatrixCommandPowerOn) withTimeout:MATRIX_COMMAND_TIMEOUT tag:0];
+}
+
+- (void)powerMatrixOff {
+    [_matrixSocket writeData:stringForMatrixCommand(MatrixCommandPowerOff) withTimeout:MATRIX_COMMAND_TIMEOUT tag:0];
+}
+
 - (void)setMatrixInput:(InputDevice)inputDevice toOutput:(OutputDevice)outputDevice {
     dispatch_async(_commandQueue, ^{
         [_matrixSocket writeData:matrixCommandDataForOutputDevice(outputDevice) withTimeout:MATRIX_COMMAND_TIMEOUT tag:0];
@@ -193,6 +201,8 @@ SINGLETON(CommandCenter)
 
 #pragma mark - Socket Delegate Methods
 
+// todo GET RID OF THIS OR HANDLE PROPERLY
+
 - (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err {
     NSLog(@"Socket Disconnected With Error:%@", err);
     //[self connectSockets];
@@ -216,7 +226,6 @@ SINGLETON(CommandCenter)
     return 0;
 }
 
-//
 
 - (dispatch_queue_t)newSocketQueueForConnectionFromAddress:(NSData *)address onSocket:(GCDAsyncSocket *)sock {
     NSLog(@"HERE");
