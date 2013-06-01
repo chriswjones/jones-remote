@@ -13,7 +13,7 @@ typedef enum {
     IRCommandRewind, IRCommandFastForward, IRCommandPlay, IRCommandPause, IRCommandStop, IRCommandRecord, IRCommandLive,
     IRCommandGuide, IRCommandRecordedShows, IRCommandPageUp, IRCommandPageDown, IRCommandUp, IRCommandDown, IRCommandLeft, IRCommandRight, IRCommandSelect, IRCommandExit,
     IRCommandA, IRCommandB, IRCommandC, IRCommandInfo,
-    IRCommandPowerOn, IRCommandPowerOff, IRCommandVolUp, IRCommandVolDown, IRCommandMute,
+    IRCommandPowerOn, IRCommandPowerOff, IRCommandPowerOnOff, IRCommandVolUp, IRCommandVolDown, IRCommandMute,
     IRCommandPlusDay, IRCommandMinusDay, IRCommandPlusChannel, IRCommandMinusChannel,
     IRCommandStatus, IRCommandBack
 } IRCommand;

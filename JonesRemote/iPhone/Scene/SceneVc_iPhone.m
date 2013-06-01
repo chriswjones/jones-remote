@@ -55,6 +55,12 @@
 #pragma mark - Actions
 
 - (IBAction)handleCenterTV:(id)sender {
+    // DVR Channel
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand7 toIRDevice:IRDeviceDVR];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand1 toIRDevice:IRDeviceDVR];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand1 toIRDevice:IRDeviceDVR];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:IRDeviceDVR];
+    
     [[CommandCenter singleton] setMatrixInput:InputDeviceDVR toOutput:OutputDeviceCenterTv];
     [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOn toIRDevice:IRDeviceCenterTv];
     [[CommandCenter singleton] setMatrixInput:InputDeviceDVR toOutput:OutputDeviceAudioZone1];
@@ -105,10 +111,9 @@
 - (IBAction)handleRecording:(id)sender {
 
     // DVR Channel
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand7 toIRDevice:IRDeviceDVR];
     [[CommandCenter singleton] sendQueableIRCommand:IRCommand1 toIRDevice:IRDeviceDVR];
-    [[CommandCenter singleton] sendQueableIRCommand:IRCommand0 toIRDevice:IRDeviceDVR];
-    [[CommandCenter singleton] sendQueableIRCommand:IRCommand0 toIRDevice:IRDeviceDVR];
-    [[CommandCenter singleton] sendQueableIRCommand:IRCommand0 toIRDevice:IRDeviceDVR];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommand1 toIRDevice:IRDeviceDVR];
     [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:IRDeviceDVR];
 
     // Recorded Shows
@@ -116,10 +121,10 @@
 
     // Matrix assignment
     [[CommandCenter singleton] setMatrixInput:InputDeviceDVR toOutput:OutputDeviceCenterTv];
-    [[CommandCenter singleton] setMatrixInput:InputDeviceDVR toOutput:OutputDeviceAudioZone1];
 
     // Power TV On
     [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOn toIRDevice:IRDeviceCenterTv];
+    [[CommandCenter singleton] setMatrixInput:InputDeviceDVR toOutput:OutputDeviceAudioZone1];
 
     // Cleanup
     [[CommandCenter singleton] setMatrixInput:InputDeviceNone toOutput:OutputDeviceAudioZone2];
@@ -172,20 +177,6 @@
     [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOff toIRDevice:IRDeviceRightTv];
 }
 
-- (IBAction)handleAllOff:(id)sender {
-    [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOff toIRDevice:IRDeviceLeftTv];
-    [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOff toIRDevice:IRDeviceCenterTv];
-    [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOff toIRDevice:IRDeviceRightTv];
-
-    [[CommandCenter singleton] setMatrixInput:InputDeviceNone toOutput:OutputDeviceAudioZone1];
-    [[CommandCenter singleton] setMatrixInput:InputDeviceNone toOutput:OutputDeviceAudioZone2];
-    [[CommandCenter singleton] setMatrixInput:InputDeviceNone toOutput:OutputDeviceAudioZone3];
-
-    [[CommandCenter singleton] setMatrixInput:InputDeviceNone toOutput:OutputDeviceLeftTv];
-    [[CommandCenter singleton] setMatrixInput:InputDeviceNone toOutput:OutputDeviceCenterTv];
-    [[CommandCenter singleton] setMatrixInput:InputDeviceNone toOutput:OutputDeviceRightTv];
-}
-
 - (IBAction)handleInputs:(id)sender {
     AssignmentVc_iPhone *assignmentVc = [[AssignmentVc_iPhone alloc] init];
     [self.navigationController pushViewController:assignmentVc animated:YES];
@@ -196,13 +187,13 @@
 
     [[CommandCenter singleton] powerMatrixOn];
 
-    [[CommandCenter singleton] sendIRCommand:IRCommandPowerOn toIRDevice:IRDeviceDVR];
-    [[CommandCenter singleton] sendIRCommand:IRCommandPowerOn toIRDevice:IRDeviceCableA];
-    [[CommandCenter singleton] sendIRCommand:IRCommandPowerOn toIRDevice:IRDeviceCableB];
-    [[CommandCenter singleton] sendIRCommand:IRCommandPowerOn toIRDevice:IRDeviceBluRay];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOnOff toIRDevice:IRDeviceDVR];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOnOff toIRDevice:IRDeviceCableA];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOnOff toIRDevice:IRDeviceCableB];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOn toIRDevice:IRDeviceBluRay];
 
-    [self performSelector:@selector(handleCenterTV:) withObject:nil afterDelay:15.0];
-    [self performSelector:@selector(hideLoadingView) withObject:nil afterDelay:17.0];
+    [self performSelector:@selector(handleCenterTV:) withObject:nil afterDelay:25.0];
+    [self performSelector:@selector(hideLoadingView) withObject:nil afterDelay:34.0];
 }
 
 - (IBAction)handlePowerOff:(id)sender {
@@ -211,6 +202,10 @@
     [[CommandCenter singleton] setMatrixInput:InputDeviceNone toOutput:OutputDeviceAudioZone1];
     [[CommandCenter singleton] setMatrixInput:InputDeviceNone toOutput:OutputDeviceAudioZone2];
     [[CommandCenter singleton] setMatrixInput:InputDeviceNone toOutput:OutputDeviceAudioZone3];
+    
+    [[CommandCenter singleton] setMatrixInput:InputDeviceNone toOutput:OutputDeviceCenterTv];
+    [[CommandCenter singleton] setMatrixInput:InputDeviceNone toOutput:OutputDeviceLeftTv];
+    [[CommandCenter singleton] setMatrixInput:InputDeviceNone toOutput:OutputDeviceRightTv];
 
     [[CommandCenter singleton] powerMatrixOff];
 
@@ -218,12 +213,12 @@
     [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOff toIRDevice:IRDeviceCenterTv];
     [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOff toIRDevice:IRDeviceRightTv];
 
-    [[CommandCenter singleton] sendIRCommand:IRCommandPowerOff toIRDevice:IRDeviceDVR];
-    [[CommandCenter singleton] sendIRCommand:IRCommandPowerOff toIRDevice:IRDeviceCableA];
-    [[CommandCenter singleton] sendIRCommand:IRCommandPowerOff toIRDevice:IRDeviceCableB];
-    [[CommandCenter singleton] sendIRCommand:IRCommandPowerOff toIRDevice:IRDeviceBluRay];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOnOff toIRDevice:IRDeviceDVR];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOnOff toIRDevice:IRDeviceCableA];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOnOff toIRDevice:IRDeviceCableB];
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOff toIRDevice:IRDeviceBluRay];
 
-    [self performSelector:@selector(hideLoadingView) withObject:nil afterDelay:9.0];
+    [self performSelector:@selector(hideLoadingView) withObject:nil afterDelay:15.0];
 }
 
 #pragma mark - Helpers

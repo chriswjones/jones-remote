@@ -259,7 +259,6 @@
 		83CA6A4316C590AD002775C0 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		83CA6A4416C590AD002775C0 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
 		83CA6A4D16C590DB002775C0 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = SOURCE_ROOT; };
-		83CA6A4F16C5914D002775C0 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		83EDEF5215C2F4C200588FEA /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		83EDEF5915C2F50E00588FEA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		83EDEF5A15C2F50E00588FEC /* JTLSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTLSingleton.h; sourceTree = "<group>"; };
@@ -362,7 +361,6 @@
 		76E7C73286F44FD20C7CCA27 = {
 			isa = PBXGroup;
 			children = (
-				83CA6A4F16C5914D002775C0 /* Default.png */,
 				83CA6A3D16C590AD002775C0 /* Icon-72.png */,
 				83CA6A3E16C590AD002775C0 /* Icon-72@2x.png */,
 				83CA6A3F16C590AD002775C0 /* Icon-Small-50.png */,

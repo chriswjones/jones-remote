@@ -93,11 +93,17 @@ SINGLETON(CommandCenter)
 #pragma mark - Matrix Commands
 
 - (void)powerMatrixOn {
-    [_matrixSocket writeData:stringForMatrixCommand(MatrixCommandPowerOn) withTimeout:MATRIX_COMMAND_TIMEOUT tag:0];
+    dispatch_async(_commandQueue, ^{
+[_matrixSocket writeData:[stringForMatrixCommand(MatrixCommandPowerOn) dataUsingEncoding:NSUTF8StringEncoding] withTimeout:MATRIX_COMMAND_TIMEOUT tag:0];
+        sleep(1);
+    });
 }
 
 - (void)powerMatrixOff {
-    [_matrixSocket writeData:stringForMatrixCommand(MatrixCommandPowerOff) withTimeout:MATRIX_COMMAND_TIMEOUT tag:0];
+    dispatch_async(_commandQueue, ^{
+        [_matrixSocket writeData:[stringForMatrixCommand(MatrixCommandPowerOff) dataUsingEncoding:NSUTF8StringEncoding] withTimeout:MATRIX_COMMAND_TIMEOUT tag:0];  
+        sleep(1);
+    });
 }
 
 - (void)setMatrixInput:(InputDevice)inputDevice toOutput:(OutputDevice)outputDevice {
