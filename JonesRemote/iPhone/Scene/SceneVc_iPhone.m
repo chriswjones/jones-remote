@@ -183,7 +183,7 @@
 }
 
 - (IBAction)handlePowerOn:(id)sender {
-    //[self showLoadingView];
+    [self showLoadingView];
 
     [[CommandCenter singleton] powerMatrixOn];
 
