@@ -10,13 +10,16 @@
 		5A41608D0128B56CB5294B61 /* BluRayVc_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A41602B31AA2BD0E08F72BC /* BluRayVc_iPhone.xib */; };
 		5A4160FC76F8457988A315AF /* audio_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A41639EB1D121A764FA269B /* audio_1@2x.png */; };
 		5A41610184C19F628CA2E73B /* AssignmentRowControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4163697DCE59418166FE95 /* AssignmentRowControl.m */; };
+		5A41635360114448FDB340F5 /* DirecTV.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A416ABE927584195A2B4834 /* DirecTV.m */; };
 		5A41636381FFFADBD7FE1C7E /* back_bbi_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A416808BF007781CCDFA8F6 /* back_bbi_highlighted@2x.png */; };
 		5A4163CEEF4E66618507DDAB /* back_bbi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A4167C661088C3AC04FDF28 /* back_bbi@2x.png */; };
 		5A41650FF8A652500795AE63 /* arrow_R_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A41692C498DDF579E17ECB7 /* arrow_R_highlighted@2x.png */; };
+		5A41652FD47E3C7DBFACC060 /* speaker@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A41674B6432971B500C4ECE /* speaker@2x.png */; };
 		5A41657FDCCB2BA05669C72C /* bbi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A4161F89D607E27C84051A8 /* bbi@2x.png */; };
 		5A4165F2A51C36D26BAD1ACC /* tv_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A4167118CD0F7D34CF91F8B /* tv_right@2x.png */; };
 		5A4166EA00A6BDD3A9AEF6D5 /* arrow_R@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A416FA6FB96B844F5516630 /* arrow_R@2x.png */; };
 		5A416732C27F7F29D6F97B34 /* audio_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A416064A23E7AFD13EF4263 /* audio_3@2x.png */; };
+		5A41680BC6AC618728CE0910 /* headphones@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A416B69B9757101150DEEE9 /* headphones@2x.png */; };
 		5A41685F610594E38352D2F8 /* Theme.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A41674A89BAB93AFFA2ED65 /* Theme.m */; };
 		5A4168A93F6492C227EC174B /* AssignmentVc_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4169CA5D12C7B05A98E5EA /* AssignmentVc_iPhone.m */; };
 		5A416971B71A8DF7621B405B /* espn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A416A36EAD521B221263A9E /* espn@2x.png */; };
@@ -30,6 +33,7 @@
 		5A416E47A1156F24007A7AE7 /* audio_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A4165FB88EC38AC51F5F555 /* audio_2@2x.png */; };
 		5A416EBD791E9060C91A0687 /* AssignmentVc_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A416D5EE8F2D8C189771E93 /* AssignmentVc_iPhone.xib */; };
 		5A416EBDBF71F4638EC4A386 /* bbi_highlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A416410D4DE560F763AB05A /* bbi_highlighted@2x.png */; };
+		5A416EC65F9848126A3F3410 /* Marantz.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A416310F1147EFDCC0AB58A /* Marantz.m */; };
 		5A416EF555381A6992F66774 /* RemoteButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4167D1A8952C2E77585E53 /* RemoteButton.m */; };
 		5A416F1A4B3E7AB98768CFD0 /* BluRayVc_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A41660672C0B1358027BAAB /* BluRayVc_iPhone.m */; };
 		76E7C73286F44FD20C7CCA35 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76E7C73286F44FD20C7CCA34 /* UIKit.framework */; };
@@ -142,25 +146,31 @@
 		5A416064A23E7AFD13EF4263 /* audio_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audio_3@2x.png"; sourceTree = "<group>"; };
 		5A4160EEFFF46BC345B52E44 /* AssignmentVc_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignmentVc_iPhone.h; sourceTree = "<group>"; };
 		5A4161F89D607E27C84051A8 /* bbi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bbi@2x.png"; sourceTree = "<group>"; };
+		5A416310F1147EFDCC0AB58A /* Marantz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Marantz.m; sourceTree = "<group>"; };
 		5A4163697DCE59418166FE95 /* AssignmentRowControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignmentRowControl.m; sourceTree = "<group>"; };
 		5A41639EB1D121A764FA269B /* audio_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audio_1@2x.png"; sourceTree = "<group>"; };
 		5A4163CAA638F584E0200545 /* AssignmentRowControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignmentRowControl.h; sourceTree = "<group>"; };
 		5A4164062C5B88FDA485F7F7 /* BluRayVc_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluRayVc_iPhone.h; sourceTree = "<group>"; };
 		5A416410D4DE560F763AB05A /* bbi_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bbi_highlighted@2x.png"; sourceTree = "<group>"; };
+		5A4164976B7A1EF39313C74F /* Marantz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Marantz.h; sourceTree = "<group>"; };
 		5A4165FB88EC38AC51F5F555 /* audio_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audio_2@2x.png"; sourceTree = "<group>"; };
 		5A41660672C0B1358027BAAB /* BluRayVc_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluRayVc_iPhone.m; sourceTree = "<group>"; };
 		5A41662E020FAEF909CD611F /* Theme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Theme.h; sourceTree = "<group>"; };
 		5A41663267F21E137437D8EF /* tv_center@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv_center@2x.png"; sourceTree = "<group>"; };
+		5A4166A5D247660DB3E82515 /* DirecTV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DirecTV.h; sourceTree = "<group>"; };
 		5A4167118CD0F7D34CF91F8B /* tv_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tv_right@2x.png"; sourceTree = "<group>"; };
 		5A416743BA7E91F554944219 /* RemoteButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteButton.h; sourceTree = "<group>"; };
 		5A41674A89BAB93AFFA2ED65 /* Theme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Theme.m; sourceTree = "<group>"; };
+		5A41674B6432971B500C4ECE /* speaker@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "speaker@2x.png"; sourceTree = "<group>"; };
 		5A4167C661088C3AC04FDF28 /* back_bbi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_bbi@2x.png"; sourceTree = "<group>"; };
 		5A4167D1A8952C2E77585E53 /* RemoteButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteButton.m; sourceTree = "<group>"; };
 		5A416808BF007781CCDFA8F6 /* back_bbi_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_bbi_highlighted@2x.png"; sourceTree = "<group>"; };
 		5A41692C498DDF579E17ECB7 /* arrow_R_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_R_highlighted@2x.png"; sourceTree = "<group>"; };
 		5A4169CA5D12C7B05A98E5EA /* AssignmentVc_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignmentVc_iPhone.m; sourceTree = "<group>"; };
 		5A416A36EAD521B221263A9E /* espn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "espn@2x.png"; sourceTree = "<group>"; };
+		5A416ABE927584195A2B4834 /* DirecTV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DirecTV.m; sourceTree = "<group>"; };
 		5A416B49F30546A071806FF2 /* arrow_L@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_L@2x.png"; sourceTree = "<group>"; };
+		5A416B69B9757101150DEEE9 /* headphones@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "headphones@2x.png"; sourceTree = "<group>"; };
 		5A416BC523B369E57FF0F6E4 /* AssignmentButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignmentButton.m; sourceTree = "<group>"; };
 		5A416BD17BF5E5D82DB7D65F /* arrow_L_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_L_highlighted@2x.png"; sourceTree = "<group>"; };
 		5A416C5C2AF2453BB8E37526 /* AssignmentButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssignmentButton.h; sourceTree = "<group>"; };
@@ -308,6 +318,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A4165B88B05B5C32A0706C5 /* DirecTV */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DirecTV;
+			sourceTree = "<group>";
+		};
 		5A416BFA60FE7F726B84FFC6 /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
@@ -489,6 +506,8 @@
 				5A416BFA60FE7F726B84FFC6 /* Favorites */,
 				5A416410D4DE560F763AB05A /* bbi_highlighted@2x.png */,
 				5A4161F89D607E27C84051A8 /* bbi@2x.png */,
+				5A416B69B9757101150DEEE9 /* headphones@2x.png */,
+				5A41674B6432971B500C4ECE /* speaker@2x.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -563,6 +582,10 @@
 				83EDEF5A15C2F50E00588FED /* IRHardware.h */,
 				838CB17C16E2D2CA001BE046 /* BluRay.h */,
 				838CB17D16E2D2CA001BE046 /* BluRay.m */,
+				5A416310F1147EFDCC0AB58A /* Marantz.m */,
+				5A4164976B7A1EF39313C74F /* Marantz.h */,
+				5A416ABE927584195A2B4834 /* DirecTV.m */,
+				5A4166A5D247660DB3E82515 /* DirecTV.h */,
 			);
 			path = IR;
 			sourceTree = "<group>";
@@ -577,6 +600,7 @@
 				5A416CE26FB737D702D1D55A /* BluRay */,
 				5A4167D1A8952C2E77585E53 /* RemoteButton.m */,
 				5A416743BA7E91F554944219 /* RemoteButton.h */,
+				5A4165B88B05B5C32A0706C5 /* DirecTV */,
 			);
 			path = Remote;
 			sourceTree = "<group>";
@@ -767,6 +791,8 @@
 				839F60F916CB32110011CD6C /* scene_sportsBar_large@2x.png in Resources */,
 				839F60FA16CB41500011CD6C /* Default-568h@2x.png in Resources */,
 				5A41608D0128B56CB5294B61 /* BluRayVc_iPhone.xib in Resources */,
+				5A41680BC6AC618728CE0910 /* headphones@2x.png in Resources */,
+				5A41652FD47E3C7DBFACC060 /* speaker@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -818,6 +844,8 @@
 				5A416F1A4B3E7AB98768CFD0 /* BluRayVc_iPhone.m in Sources */,
 				838CB17E16E2D2CA001BE046 /* BluRay.m in Sources */,
 				5A416EF555381A6992F66774 /* RemoteButton.m in Sources */,
+				5A416EC65F9848126A3F3410 /* Marantz.m in Sources */,
+				5A41635360114448FDB340F5 /* DirecTV.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

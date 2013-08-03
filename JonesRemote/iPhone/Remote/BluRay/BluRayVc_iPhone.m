@@ -31,7 +31,6 @@
     [self.scrollView addSubview:self.navView];
 }
 
-
 #pragma mark - Actions
 
 - (IBAction)handleUp:(id)sender {

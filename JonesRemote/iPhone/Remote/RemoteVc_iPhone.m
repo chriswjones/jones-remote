@@ -31,6 +31,10 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:YES animated:animated];
+
+    UISwipeGestureRecognizer *swipeUp = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleUp:)];
+    swipeUp.direction = UISwipeGestureRecognizerDirectionUp;
+    [self.view addGestureRecognizer:swipeUp];
 }
 
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration {
@@ -62,9 +66,16 @@
 
     // Set remote view
     switch (_irDevice) {
-        case IRDeviceDVR:
+        case IRDeviceDVR:   {
+            DvrVc_iPhone *dvrVc = [[DvrVc_iPhone alloc] init];
+            [dvrVc bindIRDevice:_irDevice];
+            _remoteVc = dvrVc;
+            [self.remoteContainer addSubview:_remoteVc.view];
+            break;
+        }
         case IRDeviceCableA:
         case IRDeviceCableB: {
+            // todo direct tv specific remote
             DvrVc_iPhone *dvrVc = [[DvrVc_iPhone alloc] init];
             [dvrVc bindIRDevice:_irDevice];
             _remoteVc = dvrVc;
@@ -123,6 +134,11 @@
         default:
             break;
     }
+}
+
+- (void)handleUp:(id)sender {
+    NSLog(@"SWIPE UP!");
+    // todo show marantz volume control
 }
 
 #pragma mark - Helpers

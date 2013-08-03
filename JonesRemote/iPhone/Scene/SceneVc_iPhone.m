@@ -183,7 +183,7 @@
 }
 
 - (IBAction)handlePowerOn:(id)sender {
-    [self showLoadingView];
+    //[self showLoadingView];
 
     [[CommandCenter singleton] powerMatrixOn];
 
@@ -192,12 +192,16 @@
     [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOnOff toIRDevice:IRDeviceCableB];
     [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOn toIRDevice:IRDeviceBluRay];
 
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOn toIRDevice:IRDeviceMarantz];
+
     [self performSelector:@selector(handleCenterTV:) withObject:nil afterDelay:25.0];
     [self performSelector:@selector(hideLoadingView) withObject:nil afterDelay:34.0];
 }
 
 - (IBAction)handlePowerOff:(id)sender {
     [self showLoadingView];
+
+    [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOff toIRDevice:IRDeviceMarantz];
 
     [[CommandCenter singleton] setMatrixInput:InputDeviceNone toOutput:OutputDeviceAudioZone1];
     [[CommandCenter singleton] setMatrixInput:InputDeviceNone toOutput:OutputDeviceAudioZone2];
@@ -219,6 +223,7 @@
     [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOff toIRDevice:IRDeviceBluRay];
 
     [self performSelector:@selector(hideLoadingView) withObject:nil afterDelay:15.0];
+
 }
 
 #pragma mark - Helpers

@@ -74,7 +74,7 @@
     }
 
     // Horizontal Divider
-    _hDivider.frame = CGRectMake(0, self.bounds.size.height - 1, self.bounds.size.width, 1.0);
+    _hDivider.frame = CGRectMake(0, self.bounds.size.height - 1, (320/3) * [_buttonArray count], 1.0);
 
     // Label
     _deviceLabel.frame = CGRectMake(5.0, 5.0, self.bounds.size.width - 10.0, self.bounds.size.height - 10.0);

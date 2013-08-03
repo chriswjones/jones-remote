@@ -11,6 +11,8 @@
 #import "TimeWarnerDVR.h"
 #import "PanasonicPlasmaTV.h"
 #import "BluRay.h"
+#import "Marantz.h"
+#import "DirecTV.h"
 
 #define CONNECT_SOCKET_TIMEOUT 10
 #define MATRIX_COMMAND_TIMEOUT 1
@@ -76,15 +78,15 @@ SINGLETON(CommandCenter)
     if ([_matrixSocket isConnected]) {
         [_matrixSocket disconnect];
     }
-    
+
     if ([_receiverSocket isConnected]) {
         [_receiverSocket disconnect];
     }
-    
+
     if ([_ir1Socket isConnected]) {
         [_ir1Socket disconnect];
     }
-    
+
     if ([_ir2Socket isConnected]) {
         [_ir2Socket disconnect];
     }
@@ -94,14 +96,14 @@ SINGLETON(CommandCenter)
 
 - (void)powerMatrixOn {
     dispatch_async(_commandQueue, ^{
-[_matrixSocket writeData:[stringForMatrixCommand(MatrixCommandPowerOn) dataUsingEncoding:NSUTF8StringEncoding] withTimeout:MATRIX_COMMAND_TIMEOUT tag:0];
+        [_matrixSocket writeData:[stringForMatrixCommand(MatrixCommandPowerOn) dataUsingEncoding:NSUTF8StringEncoding] withTimeout:MATRIX_COMMAND_TIMEOUT tag:0];
         sleep(1);
     });
 }
 
 - (void)powerMatrixOff {
     dispatch_async(_commandQueue, ^{
-        [_matrixSocket writeData:[stringForMatrixCommand(MatrixCommandPowerOff) dataUsingEncoding:NSUTF8StringEncoding] withTimeout:MATRIX_COMMAND_TIMEOUT tag:0];  
+        [_matrixSocket writeData:[stringForMatrixCommand(MatrixCommandPowerOff) dataUsingEncoding:NSUTF8StringEncoding] withTimeout:MATRIX_COMMAND_TIMEOUT tag:0];
         sleep(1);
     });
 }
@@ -149,9 +151,11 @@ SINGLETON(CommandCenter)
 
     switch (irDevice) {
         case IRDeviceDVR:
+            class = [TimeWarnerDVR class];
+            break;
         case IRDeviceCableA:
         case IRDeviceCableB:
-            class = [TimeWarnerDVR class];
+            class = [DirecTV class];
             break;
         case IRDeviceLeftTv:
         case IRDeviceCenterTv:
@@ -160,6 +164,9 @@ SINGLETON(CommandCenter)
             break;
         case IRDeviceBluRay:
             class = [BluRay class];
+            break;
+        case IRDeviceMarantz:
+            class = [Marantz class];
             break;
         default:
             break;
@@ -184,6 +191,8 @@ SINGLETON(CommandCenter)
             return @"5:3";
         case IRDeviceBluRay:
             return @"4:1";
+        case IRDeviceMarantz:
+            return @"4:2";
         default:
             return @"";
     }
@@ -199,6 +208,7 @@ SINGLETON(CommandCenter)
         case IRDeviceCableB:
             return _ir1Socket;
         case IRDeviceBluRay:
+        case IRDeviceMarantz:
             return _ir2Socket;
         default:
             return nil;
@@ -207,11 +217,8 @@ SINGLETON(CommandCenter)
 
 #pragma mark - Socket Delegate Methods
 
-// todo GET RID OF THIS OR HANDLE PROPERLY
-
-- (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err {
+/*- (void)socketDidDisconnect:(GCDAsyncSocket *)sock withError:(NSError *)err {
     NSLog(@"Socket Disconnected With Error:%@", err);
-    //[self connectSockets];
 }
 
 - (void)socket:(GCDAsyncSocket *)sock didConnectToHost:(NSString *)host port:(uint16_t)port {
@@ -231,7 +238,6 @@ SINGLETON(CommandCenter)
     NSLog(@"Read Timeout");
     return 0;
 }
-
 
 - (dispatch_queue_t)newSocketQueueForConnectionFromAddress:(NSData *)address onSocket:(GCDAsyncSocket *)sock {
     NSLog(@"HERE");
@@ -260,6 +266,6 @@ SINGLETON(CommandCenter)
 
 - (void)socketDidSecure:(GCDAsyncSocket *)sock {
     NSLog(@"HERE");
-}
+}*/
 
 @end

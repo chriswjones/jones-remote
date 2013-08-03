@@ -16,6 +16,8 @@ typedef enum {
     IRCommandPowerOn, IRCommandPowerOff, IRCommandPowerOnOff, IRCommandVolUp, IRCommandVolDown, IRCommandMute,
     IRCommandPlusDay, IRCommandMinusDay, IRCommandPlusChannel, IRCommandMinusChannel,
     IRCommandStatus, IRCommandBack
+    , IRCommandMuteOn, IRCommandMuteOff
+    , IRCommandMenu
 } IRCommand;
 
 typedef enum {
@@ -29,6 +31,7 @@ typedef enum {
     IRDeviceLeftTv,
     IRDeviceCenterTv,
     IRDeviceRightTv,
+    IRDeviceMarantz,
     IRDeviceNone
 } IRDevice;
 

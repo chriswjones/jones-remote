@@ -13,7 +13,6 @@
 @property(strong, nonatomic) IBOutlet UIView *navView;
 @property(strong, nonatomic) IBOutlet UIView *showControlView;
 
-
 - (IBAction)handleUp:(id)sender;
 - (IBAction)handleDown:(id)sender;
 - (IBAction)handleLeft:(id)sender;

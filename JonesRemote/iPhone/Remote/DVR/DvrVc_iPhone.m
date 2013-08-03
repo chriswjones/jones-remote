@@ -93,10 +93,6 @@
     [[CommandCenter singleton] sendIRCommand:IRCommandRecord toIRDevice:_irDevice];
 }
 
-- (IBAction)handleA:(id)sender {
-    [[CommandCenter singleton] sendIRCommand:IRCommandA toIRDevice:_irDevice];
-}
-
 - (IBAction)handle1:(id)sender {
     [[CommandCenter singleton] sendIRCommand:IRCommand1 toIRDevice:_irDevice];
 }
@@ -137,8 +133,8 @@
     [[CommandCenter singleton] sendIRCommand:IRCommand0 toIRDevice:_irDevice];
 }
 
-- (IBAction)handleC:(id)sender {
-    [[CommandCenter singleton] sendIRCommand:IRCommandC toIRDevice:_irDevice];
+- (IBAction)handleExit:(id)sender {
+    [[CommandCenter singleton] sendIRCommand:IRCommandExit toIRDevice:_irDevice];
 }
 
 - (IBAction)handlePageUp:(id)sender {

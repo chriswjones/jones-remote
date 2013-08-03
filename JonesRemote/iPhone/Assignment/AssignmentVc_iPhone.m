@@ -22,6 +22,11 @@
     NSMutableArray *_headerButtons;
     NSMutableArray *_rowControlsPage2;
     UIView *_verticalDivider;
+
+    UIButton *_volUp;
+    UIButton *_volDown;
+    UIButton *_muteOn;
+    UIButton *_muteOff;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -39,9 +44,8 @@
         _imageArray = [NSArray arrayWithObjects:[UIImage imageNamed:@"tv_left"],
                                                 [UIImage imageNamed:@"tv_center"],
                                                 [UIImage imageNamed:@"tv_right"],
-                                                [UIImage imageNamed:@"audio_1"],
-                                                [UIImage imageNamed:@"audio_2"],
-                                                [UIImage imageNamed:@"audio_3"],
+                                                [UIImage imageNamed:@"speaker"],
+                                                [UIImage imageNamed:@"headphones"],
                                                 nil];
     }
 
@@ -63,7 +67,6 @@
 
     // Header
     _headerView = [[UIView alloc] init];
-    //_headerView.backgroundColor = [UIColor lightGrayColor];
 
     _headerImageViews = [NSMutableArray array];
     _headerButtons = [NSMutableArray array];
@@ -105,7 +108,6 @@
         InputDevice inputDevice = (InputDevice) [input integerValue];
         NSArray *outputArray = [NSArray arrayWithObjects:[NSNumber numberWithInt:OutputDeviceAudioZone1],
                                                          [NSNumber numberWithInt:OutputDeviceAudioZone2],
-                                                         [NSNumber numberWithInt:OutputDeviceAudioZone3],
                                                          nil];
         AssignmentRowControl *rowControl = [[AssignmentRowControl alloc] initWithInputDevice:inputDevice outputArray:outputArray];
         [_scrollView addSubview:rowControl];
@@ -116,6 +118,28 @@
     _verticalDivider = [[UIView alloc] init];
     _verticalDivider.backgroundColor = [Theme grayColor];
     [_scrollView addSubview:_verticalDivider];
+
+    // Volume Buttons
+    _volUp = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [_volUp setTitle:@"+" forState:UIControlStateNormal];
+    [_volUp addTarget:self action:@selector(handleVolUp:) forControlEvents:UIControlEventTouchUpInside];
+    [_scrollView addSubview:_volUp];
+
+    _volDown = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [_volDown setTitle:@"-" forState:UIControlStateNormal];
+    [_volDown addTarget:self action:@selector(handleVolDown:) forControlEvents:UIControlEventTouchUpInside];
+    [_scrollView addSubview:_volDown];
+
+    _muteOn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [_muteOn setTitle:@"Mute On" forState:UIControlStateNormal];
+    [_muteOn addTarget:self action:@selector(handleMuteOn:) forControlEvents:UIControlEventTouchUpInside];
+    [_scrollView addSubview:_muteOn];
+
+    _muteOff = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [_muteOff setTitle:@"Mute Off" forState:UIControlStateNormal];
+    [_muteOff addTarget:self action:@selector(handleMuteOff:) forControlEvents:UIControlEventTouchUpInside];
+    [_scrollView addSubview:_muteOff];
+
 }
 
 - (void)viewWillLayoutSubviews {
@@ -126,7 +150,7 @@
 
     // Header
     _headerView.frame = CGRectMake(0, 0, 640, kHeaderRowHeight);
-    CGFloat rowWidth = 640.0 / [_headerImageViews count];
+    CGFloat rowWidth = 640.0 / 6;
     for (int i = 0; i < [_headerImageViews count]; i++) {
         UIImageView *imageView = [_headerImageViews objectAtIndex:i];
         imageView.frame = CGRectMake(i * rowWidth, 0, rowWidth, kHeaderRowHeight);
@@ -136,7 +160,7 @@
     }
 
     // Divider
-    _headerDivider.frame = CGRectMake(0, kHeaderRowHeight, 640, 1.0);
+    _headerDivider.frame = CGRectMake(0, kHeaderRowHeight, 640 - (320 / 3), 1.0);
 
     // Page 1 Rows
     CGFloat rowHeight = (_scrollView.bounds.size.height - 1.0 - kHeaderRowHeight) / [_rowControlsPage1 count];
@@ -155,6 +179,18 @@
 
     // Vertical Divider
     _verticalDivider.frame = CGRectMake(319.0, 0, 1.0, _scrollView.bounds.size.height);
+
+    // Volume buttons
+    CGFloat volY = kHeaderRowHeight;
+    CGFloat volX = 10 + 320 + (320 / 3) * 2;
+    CGFloat volWidth = 320 / 3 - 10;
+    _volUp.frame = CGRectMake(volX, volY, volWidth, rowHeight*2);
+    volY += rowHeight*2;
+    _volDown.frame = CGRectMake(volX, volY, volWidth, rowHeight*2);
+    volY += (rowHeight*2);
+    _muteOn.frame = CGRectMake(volX, volY, volWidth, rowHeight);
+    volY += rowHeight;
+    _muteOff.frame = CGRectMake(volX, volY, volWidth, rowHeight);
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -227,6 +263,22 @@
         actionSheet.tag = device;
         [actionSheet showInView:self.view];
     }
+}
+
+- (void)handleVolUp:(id)sender {
+    [[CommandCenter singleton] sendIRCommand:IRCommandVolUp toIRDevice:IRDeviceMarantz];
+}
+
+- (void)handleVolDown:(id)sender {
+    [[CommandCenter singleton] sendIRCommand:IRCommandVolDown toIRDevice:IRDeviceMarantz];
+}
+
+- (void)handleMuteOn:(id)sender {
+    [[CommandCenter singleton] sendIRCommand:IRCommandMuteOn toIRDevice:IRDeviceMarantz];
+}
+
+- (void)handleMuteOff:(id)sender {
+    [[CommandCenter singleton] sendIRCommand:IRCommandMuteOff toIRDevice:IRDeviceMarantz];
 }
 
 #pragma mark - Helpers
