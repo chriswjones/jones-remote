@@ -5,7 +5,7 @@
 
 + (void)setupNavBarAppearance {
     // remove shadow
-    [[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
+    /*[[UINavigationBar appearance] setShadowImage:[[UIImage alloc] init]];
 
     // nav bar bg
     UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1, 1)];
@@ -60,7 +60,7 @@
             UITextAttributeFont,
             nil];
     [[UIBarButtonItem appearance] setTitleTextAttributes:backTextAttrs forState:UIControlStateNormal];
-    [[UIBarButtonItem appearance] setTitleTextAttributes:backTextAttrs forState:UIControlStateHighlighted];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:backTextAttrs forState:UIControlStateHighlighted];*/
 }
 
 + (UIFont *)fontForSize:(CGFloat)size {

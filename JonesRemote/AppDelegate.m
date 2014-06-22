@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "SceneVc_iPhone.h"
+#import "HomeVc_iPhone.h"
 #import "CommandCenter.h"
 #import "Theme.h"
 
@@ -23,7 +23,7 @@
     // Load UI
     //[[UINavigationBar appearance] setTintColor:[UIColor darkGrayColor]];
     [Theme setupNavBarAppearance];
-    SceneVc_iPhone *vc = [[SceneVc_iPhone alloc] init];
+    HomeVc_iPhone *vc = [[HomeVc_iPhone alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = nav;
 
