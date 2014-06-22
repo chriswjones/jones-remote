@@ -46,7 +46,7 @@
   if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft ||
       toInterfaceOrientation == UIInterfaceOrientationLandscapeRight) {
     RemoteVc_iPhone *remoteVc = [[RemoteVc_iPhone alloc] init];
-    [remoteVc bindIRDevice:IRDeviceDVR];
+    [remoteVc bindIRDevice:IRDeviceTimeWarner];
     [self.navigationController pushViewController:remoteVc animated:NO];
   }
 }
@@ -55,10 +55,10 @@
 
 - (IBAction)handleCenterTV:(id)sender {
   // DVR Channel
-  [[CommandCenter singleton] sendQueableIRCommand:IRCommand7 toIRDevice:IRDeviceDVR];
-  [[CommandCenter singleton] sendQueableIRCommand:IRCommand1 toIRDevice:IRDeviceDVR];
-  [[CommandCenter singleton] sendQueableIRCommand:IRCommand1 toIRDevice:IRDeviceDVR];
-  [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:IRDeviceDVR];
+  [[CommandCenter singleton] sendQueableIRCommand:IRCommand7 toIRDevice:IRDeviceTimeWarner];
+  [[CommandCenter singleton] sendQueableIRCommand:IRCommand1 toIRDevice:IRDeviceTimeWarner];
+  [[CommandCenter singleton] sendQueableIRCommand:IRCommand1 toIRDevice:IRDeviceTimeWarner];
+  [[CommandCenter singleton] sendQueableIRCommand:IRCommandSelect toIRDevice:IRDeviceTimeWarner];
 
   [[CommandCenter singleton] setMatrixInput:InputDeviceDVR toOutput:OutputDeviceCenterTv];
   [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOn toIRDevice:IRDeviceCenterTv];
@@ -95,9 +95,9 @@
 
   [[CommandCenter singleton] powerMatrixOn];
 
-  [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOnOff toIRDevice:IRDeviceDVR];
-  [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOnOff toIRDevice:IRDeviceCableA];
-  [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOnOff toIRDevice:IRDeviceCableB];
+  [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOnOff toIRDevice:IRDeviceTimeWarner];
+  [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOnOff toIRDevice:IRDeviceDirecTV1];
+  [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOnOff toIRDevice:IRDeviceDirecTV2];
   [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOn toIRDevice:IRDeviceBluRay];
 
   [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOn toIRDevice:IRDeviceMarantz];
@@ -125,9 +125,9 @@
   [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOff toIRDevice:IRDeviceCenterTv];
   [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOff toIRDevice:IRDeviceRightTv];
 
-  [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOnOff toIRDevice:IRDeviceDVR];
-  [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOnOff toIRDevice:IRDeviceCableA];
-  [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOnOff toIRDevice:IRDeviceCableB];
+  [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOnOff toIRDevice:IRDeviceTimeWarner];
+  [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOnOff toIRDevice:IRDeviceDirecTV1];
+  [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOnOff toIRDevice:IRDeviceDirecTV2];
   [[CommandCenter singleton] sendQueableIRCommand:IRCommandPowerOff toIRDevice:IRDeviceBluRay];
 
   [self performSelector:@selector(hideLoadingView) withObject:nil afterDelay:15.0];

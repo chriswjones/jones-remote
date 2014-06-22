@@ -150,11 +150,11 @@ SINGLETON(CommandCenter)
 + (Class <IRHardware>)hardwareClassForIRDevice:(enum IRDevice)irDevice {
   Class <IRHardware> class = nil;
   switch (irDevice) {
-    case IRDeviceDVR:
+    case IRDeviceTimeWarner:
       class = [TimeWarnerDVR class];
       break;
-    case IRDeviceCableA:
-    case IRDeviceCableB:
+    case IRDeviceDirecTV1:
+    case IRDeviceDirecTV2:
       class = [DirecTV class];
       break;
     case IRDeviceLeftTv:
@@ -178,11 +178,11 @@ SINGLETON(CommandCenter)
 
 + (NSString *)locationStringForIRDevice:(enum IRDevice)irDevice {
   switch (irDevice) {
-    case IRDeviceCableA:
+    case IRDeviceDirecTV1:
       return @"4:2";
-    case IRDeviceDVR:
+    case IRDeviceTimeWarner:
       return @"4:1";
-    case IRDeviceCableB:
+    case IRDeviceDirecTV2:
       return @"4:3";
     case IRDeviceLeftTv:
       return @"5:1";
@@ -205,9 +205,9 @@ SINGLETON(CommandCenter)
     case IRDeviceLeftTv:
     case IRDeviceRightTv:
     case IRDeviceCenterTv:
-    case IRDeviceDVR:
-    case IRDeviceCableA:
-    case IRDeviceCableB:
+    case IRDeviceTimeWarner:
+    case IRDeviceDirecTV1:
+    case IRDeviceDirecTV2:
       return _ir1Socket;
     case IRDeviceBluRay:
     case IRDeviceMarantz:

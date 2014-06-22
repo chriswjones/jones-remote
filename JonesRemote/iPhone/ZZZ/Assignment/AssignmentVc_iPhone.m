@@ -203,7 +203,7 @@
 
     if (toInterfaceOrientation == UIInterfaceOrientationLandscapeLeft || toInterfaceOrientation == UIInterfaceOrientationLandscapeRight) {
         RemoteVc_iPhone *remoteVc = [[RemoteVc_iPhone alloc] init];
-        [remoteVc bindIRDevice:IRDeviceDVR];
+      [remoteVc bindIRDevice:IRDeviceTimeWarner];
         [self.navigationController pushViewController:remoteVc animated:NO];
     }
 }

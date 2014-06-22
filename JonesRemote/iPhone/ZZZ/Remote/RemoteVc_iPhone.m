@@ -66,15 +66,15 @@
 
     // Set remote view
     switch (_irDevice) {
-        case IRDeviceDVR:   {
+        case IRDeviceTimeWarner:   {
             DvrVc_iPhone *dvrVc = [[DvrVc_iPhone alloc] init];
             [dvrVc bindIRDevice:_irDevice];
             _remoteVc = dvrVc;
             [self.remoteContainer addSubview:_remoteVc.view];
             break;
         }
-        case IRDeviceCableA:
-        case IRDeviceCableB: {
+        case IRDeviceDirecTV1:
+        case IRDeviceDirecTV2: {
             // todo direct tv specific remote
             DvrVc_iPhone *dvrVc = [[DvrVc_iPhone alloc] init];
             [dvrVc bindIRDevice:_irDevice];
@@ -98,15 +98,15 @@
 
 - (IBAction)handleRight:(id)sender {
     switch (_irDevice) {
-        case IRDeviceDVR: {
-            [self bindIRDevice:IRDeviceCableA];
+        case IRDeviceTimeWarner: {
+          [self bindIRDevice:IRDeviceDirecTV1];
             break;
         }
-        case IRDeviceCableA: {
-            [self bindIRDevice:IRDeviceCableB];
+        case IRDeviceDirecTV1: {
+          [self bindIRDevice:IRDeviceDirecTV2];
             break;
         }
-        case IRDeviceCableB: {
+        case IRDeviceDirecTV2: {
             [self bindIRDevice:IRDeviceBluRay];
             break;
         }
@@ -118,19 +118,19 @@
 
 - (IBAction)handleLeft:(id)sender {
     switch (_irDevice) {
-        case IRDeviceCableA: {
-            [self bindIRDevice:IRDeviceDVR];
+        case IRDeviceDirecTV1: {
+          [self bindIRDevice:IRDeviceTimeWarner];
             break;
         }
-        case IRDeviceCableB: {
-            [self bindIRDevice:IRDeviceCableA];
+        case IRDeviceDirecTV2: {
+          [self bindIRDevice:IRDeviceDirecTV1];
             break;
         }
         case IRDeviceBluRay: {
-            [self bindIRDevice:IRDeviceCableB];
+          [self bindIRDevice:IRDeviceDirecTV2];
             break;
         }
-        case IRDeviceDVR:
+        case IRDeviceTimeWarner:
         default:
             break;
     }

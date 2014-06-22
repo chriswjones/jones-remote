@@ -14,9 +14,9 @@ NS_ENUM(int, IRCommand) {
 };
 
 NS_ENUM(int, IRDevice) {
-  IRDeviceDVR,
-  IRDeviceCableA,
-  IRDeviceCableB,
+  IRDeviceTimeWarner,
+  IRDeviceDirecTV1,
+  IRDeviceDirecTV2,
   IRDeviceBluRay,
   IRDeviceMac,
   IRDeviceAppleTv,
@@ -30,12 +30,12 @@ NS_ENUM(int, IRDevice) {
 
 static inline NSString *stringForIRDevice(enum IRDevice irDevice) {
   switch (irDevice) {
-    case IRDeviceDVR:
-      return @"Dvr";
-    case IRDeviceCableA:
-      return @"Cable A";
-    case IRDeviceCableB:
-      return @"Cable B";
+    case IRDeviceTimeWarner:
+      return @"TW Cable";
+    case IRDeviceDirecTV1:
+      return @"DirecTV 1";
+    case IRDeviceDirecTV2:
+      return @"DirecTV 2";
     case IRDeviceBluRay:
       return @"Blu-Ray";
     case IRDeviceMac:
