@@ -1,10 +1,3 @@
-//
-// Created by chris on 7/27/12.
-//
-// To change the template use AppCode | Preferences | File Templates.
-//
-
-
 #import <Foundation/Foundation.h>
 #import "GCDAsyncSocket.h"
 #import "MatrixEnum.h"
@@ -23,10 +16,10 @@
 
 - (void)powerMatrixOff;
 
-- (void)setMatrixInput:(InputDevice)inputDevice toOutput:(OutputDevice)outputDevice;
+- (void)setMatrixInput:(enum InputDevice)inputDevice toOutput:(enum OutputDevice)outputDevice;
 
-- (void)sendIRCommand:(IRCommand)irCommand toIRDevice:(IRDevice)irDevice;
+- (void)sendIRCommand:(enum IRCommand)irCommand toIRDevice:(enum IRDevice)irDevice;
 
-- (void)sendQueableIRCommand:(IRCommand)irCommand toIRDevice:(IRDevice)irDevice;
+- (void)sendQueableIRCommand:(enum IRCommand)irCommand toIRDevice:(enum IRDevice)irDevice;
 
 @end

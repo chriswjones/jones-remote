@@ -1,10 +1,3 @@
-//
-// Created by chris on 7/27/12.
-//
-// To change the template use AppCode | Preferences | File Templates.
-//
-
-
 #import "CommandCenter.h"
 #import "JTLSingleton.h"
 #import "IRHardware.h"
@@ -117,7 +110,7 @@ SINGLETON(CommandCenter)
   });
 }
 
-- (void)setMatrixInput:(InputDevice)inputDevice toOutput:(OutputDevice)outputDevice {
+- (void)setMatrixInput:(enum InputDevice)inputDevice toOutput:(enum OutputDevice)outputDevice {
   dispatch_async(_commandQueue, ^{
       [_matrixSocket writeData:matrixCommandDataForOutputDevice(outputDevice) withTimeout:MATRIX_COMMAND_TIMEOUT tag:0];
       [_matrixSocket writeData:matrixCommandDataForInputDevice(inputDevice) withTimeout:MATRIX_COMMAND_TIMEOUT tag:0];
@@ -127,37 +120,35 @@ SINGLETON(CommandCenter)
 
 #pragma mark - IR Commands
 
-- (void)sendIRCommand:(IRCommand)irCommand toIRDevice:(IRDevice)irDevice {
+- (void)sendIRCommand:(enum IRCommand)irCommand toIRDevice:(enum IRDevice)irDevice {
   dispatch_async(_commandQueue, ^{
       [self processIrCommand:irCommand irDevice:irDevice];
   });
 }
 
-- (void)sendQueableIRCommand:(IRCommand)irCommand toIRDevice:(IRDevice)irDevice {
+- (void)sendQueableIRCommand:(enum IRCommand)irCommand toIRDevice:(enum IRDevice)irDevice {
   dispatch_async(_commandQueue, ^{
       [self processIrCommand:irCommand irDevice:irDevice];
       sleep(IR_COMMAND_DELAY);
   });
 }
 
-- (void)processIrCommand:(IRCommand)irCommand irDevice:(IRDevice)irDevice {
+- (void)processIrCommand:(enum IRCommand)irCommand irDevice:(enum IRDevice)irDevice {
   NSString *locationString = [CommandCenter locationStringForIRDevice:irDevice];
   Class <IRHardware> hardwareClass = [CommandCenter hardwareClassForIRDevice:irDevice];
   NSString *commandString = [hardwareClass stringForIRCommand:irCommand];
   NSString *finalString = [NSString stringWithFormat:@"sendir,%@,999,%@\r", locationString, commandString];
 
-  dispatch_async(dispatch_get_main_queue(), ^{
-      NSLog(@"Final IR String:%@", finalString);
-  });
+//  dispatch_async(dispatch_get_main_queue(), ^{
+//      NSLog(@"Final IR String:%@", finalString);
+//  });
 
   GCDAsyncSocket *socket = [self socketForIRDevice:irDevice];
   [socket writeData:[finalString dataUsingEncoding:NSUTF8StringEncoding] withTimeout:IR_COMMAND_TIMEOUT tag:0];
 }
 
-+ (Class <IRHardware>)hardwareClassForIRDevice:(IRDevice)irDevice {
-
++ (Class <IRHardware>)hardwareClassForIRDevice:(enum IRDevice)irDevice {
   Class <IRHardware> class = nil;
-
   switch (irDevice) {
     case IRDeviceDVR:
       class = [TimeWarnerDVR class];
@@ -178,13 +169,14 @@ SINGLETON(CommandCenter)
       class = [Marantz class];
       break;
     default:
+      NSLog(@"Error, unrecognized ir device: %d", irDevice);
       break;
   }
 
   return class;
 }
 
-+ (NSString *)locationStringForIRDevice:(IRDevice)irDevice {
++ (NSString *)locationStringForIRDevice:(enum IRDevice)irDevice {
   switch (irDevice) {
     case IRDeviceCableA:
       return @"4:2";
@@ -203,11 +195,12 @@ SINGLETON(CommandCenter)
     case IRDeviceMarantz:
       return @"4:2";
     default:
+      NSLog(@"Error, unrecognized ir device: %d", irDevice);
       return @"";
   }
 }
 
-- (GCDAsyncSocket *)socketForIRDevice:(IRDevice)device {
+- (GCDAsyncSocket *)socketForIRDevice:(enum IRDevice)device {
   switch (device) {
     case IRDeviceLeftTv:
     case IRDeviceRightTv:
@@ -220,6 +213,7 @@ SINGLETON(CommandCenter)
     case IRDeviceMarantz:
       return _ir2Socket;
     default:
+      NSLog(@"Error, unrecognized ir device: %d", device);
       return nil;
   }
 }

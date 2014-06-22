@@ -145,6 +145,7 @@
 		5A41639EB1D121A764FA269B /* audio_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audio_1@2x.png"; sourceTree = "<group>"; };
 		5A416410D4DE560F763AB05A /* bbi_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bbi_highlighted@2x.png"; sourceTree = "<group>"; };
 		5A4164976B7A1EF39313C74F /* Marantz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Marantz.h; sourceTree = "<group>"; };
+		5A416557C217941916904432 /* IRHardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IRHardware.h; sourceTree = "<group>"; };
 		5A41658E601DDE9B619AB3E3 /* RemoteVc_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteVc_iPhone.m; sourceTree = "<group>"; };
 		5A4165FB88EC38AC51F5F555 /* audio_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "audio_2@2x.png"; sourceTree = "<group>"; };
 		5A41661C52D3D325B0B07AAB /* BluRayVc_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BluRayVc_iPhone.m; sourceTree = "<group>"; };
@@ -173,6 +174,7 @@
 		5A416B706A5535FFEAA1412C /* ScenesTvc_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScenesTvc_iPhone.h; sourceTree = "<group>"; };
 		5A416BC16AA70EB8439CB182 /* AssignmentVc_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AssignmentVc_iPhone.m; sourceTree = "<group>"; };
 		5A416BD17BF5E5D82DB7D65F /* arrow_L_highlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow_L_highlighted@2x.png"; sourceTree = "<group>"; };
+		5A416BD2739FB5C3DEF6B42B /* IREnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IREnum.h; sourceTree = "<group>"; };
 		5A416C5C133AB9BF659550F6 /* BluRayVc_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BluRayVc_iPhone.h; sourceTree = "<group>"; };
 		5A416DB92F9561CDBE98B19E /* RemoteVc_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteVc_iPhone.h; sourceTree = "<group>"; };
 		5A416DC3ECC9F936DC799019 /* AssignmentButtonBg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AssignmentButtonBg@2x.png"; sourceTree = "<group>"; };
@@ -262,10 +264,8 @@
 		83EDEF5215C2F4C200588FEA /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		83EDEF5915C2F50E00588FEA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		83EDEF5A15C2F50E00588FEC /* JTLSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTLSingleton.h; sourceTree = "<group>"; };
-		83EDEF5A15C2F50E00588FED /* IRHardware.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IRHardware.h; sourceTree = "<group>"; };
 		83EDEF5A15C2F50E00588FEF /* TimeWarnerDVR.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeWarnerDVR.m; sourceTree = "<group>"; };
 		83EDEF5A15C2F50E00588FF1 /* TimeWarnerDVR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeWarnerDVR.h; sourceTree = "<group>"; };
-		83EDEF5A15C2F50E00588FF2 /* IREnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IREnum.h; sourceTree = "<group>"; };
 		83EDEF5A15C2F50E00588FF3 /* PanasonicPlasmaTV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanasonicPlasmaTV.m; sourceTree = "<group>"; };
 		83EDEF5A15C2F50E00588FF5 /* PanasonicPlasmaTV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanasonicPlasmaTV.h; sourceTree = "<group>"; };
 		83F2B42316C43BB200993AC9 /* pac12@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pac12@2x.png"; sourceTree = "<group>"; };
@@ -586,7 +586,9 @@
 				76E7C73286F44FD20C7CCA9C /* MatrixEnum.h */,
 				76E7C73286F44FD20C7CCA9B /* CommandCenter.h */,
 				76E7C73286F44FD20C7CCA99 /* CommandCenter.m */,
-				83EDEF5A15C2F50E00588FEE /* IR */,
+				83EDEF5A15C2F50E00588FEE /* IRDevices */,
+				5A416BD2739FB5C3DEF6B42B /* IREnum.h */,
+				5A416557C217941916904432 /* IRHardware.h */,
 			);
 			path = CommandCenter;
 			sourceTree = "<group>";
@@ -617,15 +619,13 @@
 			path = JTLCommon;
 			sourceTree = "<group>";
 		};
-		83EDEF5A15C2F50E00588FEE /* IR */ = {
+		83EDEF5A15C2F50E00588FEE /* IRDevices */ = {
 			isa = PBXGroup;
 			children = (
 				83EDEF5A15C2F50E00588FF5 /* PanasonicPlasmaTV.h */,
 				83EDEF5A15C2F50E00588FF3 /* PanasonicPlasmaTV.m */,
-				83EDEF5A15C2F50E00588FF2 /* IREnum.h */,
 				83EDEF5A15C2F50E00588FF1 /* TimeWarnerDVR.h */,
 				83EDEF5A15C2F50E00588FEF /* TimeWarnerDVR.m */,
-				83EDEF5A15C2F50E00588FED /* IRHardware.h */,
 				838CB17C16E2D2CA001BE046 /* BluRay.h */,
 				838CB17D16E2D2CA001BE046 /* BluRay.m */,
 				5A416310F1147EFDCC0AB58A /* Marantz.m */,
@@ -633,7 +633,7 @@
 				5A416ABE927584195A2B4834 /* DirecTV.m */,
 				5A4166A5D247660DB3E82515 /* DirecTV.h */,
 			);
-			path = IR;
+			path = IRDevices;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

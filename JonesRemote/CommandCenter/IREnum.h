@@ -1,13 +1,6 @@
-//
-// Created by chris on 7/27/12.
-//
-// To change the template use AppCode | Preferences | File Templates.
-//
-
-
 #import "MatrixEnum.h"
 
-typedef enum {
+NS_ENUM(int, IRCommand) {
   IRCommandNoCommand,
   IRCommand0, IRCommand1, IRCommand2, IRCommand3, IRCommand4, IRCommand5, IRCommand6, IRCommand7, IRCommand8, IRCommand9,
   IRCommandRewind, IRCommandFastForward, IRCommandPlay, IRCommandPause, IRCommandStop, IRCommandRecord, IRCommandLive,
@@ -18,9 +11,9 @@ typedef enum {
   IRCommandStatus, IRCommandBack,
   IRCommandMuteOn, IRCommandMuteOff,
   IRCommandMenu
-} IRCommand;
+};
 
-typedef enum {
+NS_ENUM(int, IRDevice) {
   IRDeviceDVR,
   IRDeviceCableA,
   IRDeviceCableB,
@@ -33,54 +26,32 @@ typedef enum {
   IRDeviceRightTv,
   IRDeviceMarantz,
   IRDeviceNone
-} IRDevice;
+};
 
-static inline NSString *stringForIRDevice(IRDevice irDevice) {
-  NSString *string = @"";
+static inline NSString *stringForIRDevice(enum IRDevice irDevice) {
   switch (irDevice) {
-    case IRDeviceDVR: {
-      string = @"DVR";
-      break;
-    }
-    case IRDeviceCableA: {
-      string = @"CABLE A";
-      break;
-    }
-    case IRDeviceCableB: {
-      string = @"CABLE B";
-      break;
-    }
-    case IRDeviceBluRay: {
-      string = @"BLU-RAY";
-      break;
-    }
-    case IRDeviceMac: {
-      string = @"MAC MINI";
-      break;
-    }
-    case IRDeviceAppleTv: {
-      string = @"APPLE TV";
-      break;
-    }
-    case IRDeviceWii: {
-      string = @"Wii";
-      break;
-    }
-    case IRDeviceLeftTv: {
-      string = @"LEFT TV";
-      break;
-    }
-    case IRDeviceCenterTv: {
-      string = @"CENTER TV";
-      break;
-    }
-    case IRDeviceRightTv: {
-      string = @"RIGHT TV";
-      break;
-    }
+    case IRDeviceDVR:
+      return @"Dvr";
+    case IRDeviceCableA:
+      return @"Cable A";
+    case IRDeviceCableB:
+      return @"Cable B";
+    case IRDeviceBluRay:
+      return @"Blu-Ray";
+    case IRDeviceMac:
+      return @"Mac Mini";
+    case IRDeviceAppleTv:
+      return @"Apple TV";
+    case IRDeviceWii:
+      return @"Wii";
+    case IRDeviceLeftTv:
+      return @"Left TV";
+    case IRDeviceCenterTv:
+      return @"Center TV";
+    case IRDeviceRightTv:
+      return @"Right TV";
     default:
-      break;
+      NSLog(@"Error, unrecognized ir device: %d", irDevice);
+      return @"";
   }
-
-  return string;
 }
