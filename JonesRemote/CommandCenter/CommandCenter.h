@@ -13,8 +13,6 @@
 
 @interface CommandCenter : NSObject <GCDAsyncSocketDelegate>
 
-@property(nonatomic, strong) GCDAsyncSocket *matrixSocket;
-
 + (CommandCenter *)singleton;
 
 - (void)connectSockets;
